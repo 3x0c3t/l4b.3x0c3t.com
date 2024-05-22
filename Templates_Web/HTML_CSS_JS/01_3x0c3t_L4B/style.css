@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+header, footer {
+  height: 5%;
+  display: flex;
+}
+
+.header-block, .footer-block {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#header1, #header2, #header3 {
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(177,177,177,1) 50%);
+}
+
+#footer1, #footer2, #footer3 {
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(177,177,177,1) 50%);
+}
+
+main {
+  height: 90%;
+  background: radial-gradient(circle, #666666, #333333);
+}

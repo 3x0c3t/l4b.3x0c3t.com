@@ -1,0 +1,91 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(87,87,87,1) 50%);
+    color: white;
+}
+
+.header-block1, .header-block2, .header-block3  {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.header-block1{
+    background: radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(0,0,0,1) 100%);
+    border: 1px solid #000000;
+}
+
+
+main {
+    height: 80%;
+    background-image: 
+    radial-gradient(circle farthest-corner at top left, rgb(0, 255, 255) 0%, rgba(0, 0, 0, 0) 50%),
+    radial-gradient(circle farthest-side at top right, rgb(0, 210, 210) 0%, rgba(0, 0, 0, 0) 50%),
+    radial-gradient(circle farthest-corner at bottom left, rgb(0, 165, 165) 0%, rgba(0, 0, 0, 0) 50%),
+    radial-gradient(circle farthest-corner at bottom right, rgb(0, 120, 120) 0%, rgba(0, 0, 0, 0) 50%),
+    radial-gradient(ellipse at bottom center, rgb(0, 75, 75) 0%, rgba(0, 0, 0, 0) 100%);
+animation: colorChange 10s ease infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: #000000;
+    }
+    50% {
+        background-color: #007777;
+    }
+    100% {
+        background-color: #000000;
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(87,87,87,1) 50%);
+    color: white;
+}
+
+.footer-block {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+/* Style par défaut pour les liens */
+a {
+    color: #00ffea; /* Couleur par défaut */
+    text-decoration: none; /* Pas de soulignement par défaut */
+    transition: color 0.3s, text-shadow 0.3s; /* Transition pour des effets doux */
+}
+
+/* Style pour les liens au survol */
+a:hover {
+    color: #000000; /* Couleur lors du survol */
+    text-shadow: 0px 0px 10px rgb(0, 255, 179); /* Effet d'ombre lors du survol */
+}
+
+/* Style pour les liens actifs (lorsque le lien est cliqué) */
+a:active {
+    color: #00ccff; /* Couleur lorsque le lien est actif (cliqué) */
+}
+
+/* Style pour les liens visités (en retirant les effets spécifiques) */
+a:visited {
+    color: #0066cc; /* Même couleur que le lien non visité */
+    text-decoration: none; /* Même style de décoration */
+    text-shadow: none; /* Pas d'ombre pour les liens visités */
+}

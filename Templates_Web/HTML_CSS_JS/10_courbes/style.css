@@ -1,0 +1,18 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Fond noir */
+  }
+  
+  .line {
+    width: 1px; /* Largeur de la ligne */
+    height: 100vh; /* Hauteur égale à la hauteur de l'écran */
+    background-color: white; /* Couleur de la ligne */
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centre la ligne horizontalement */
+    transform: translateX(-50%);
+  }
+  

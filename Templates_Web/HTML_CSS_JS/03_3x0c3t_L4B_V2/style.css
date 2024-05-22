@@ -1,0 +1,50 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    background-color: #333;
+    color: white;
+}
+
+.header-block {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style des liens */
+.header-block a {
+    text-decoration: none; /* Supprimer le soulignage */
+    color: green; /* Couleur verte */
+    transition: color 0.3s; /* Transition fluide */
+}
+
+.header-block a:hover {
+    color: #00ff00; /* Vert fluo au survol */
+}
+
+main {
+    height: 80%; /* Ajustez selon vos besoins */
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    background-color: #333;
+    color: white;
+}
+
+.footer-block {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO en TypeScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>POO en TypeScript</h1>
+        <nav>
+            <a href="https://l4b.3x0c3t.com/">Page d'accueil</a>
+        </nav>
+    </header>
+    <main>
+        <section id="classes">
+            <h2>Classes</h2>
+            <p>Les classes en TypeScript sont des modèles pour créer des objets. Une classe encapsule des données pour l'objet et des méthodes pour manipuler ces données.</p>
+            <pre><code>
+class Person {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+}
+
+const person1 = new Person("Alice", 30);
+person1.greet();  // Output: Hello, my name is Alice and I am 30 years old.
+            </code></pre>
+        </section>
+        <section id="inheritance">
+            <h2>Héritage</h2>
+            <p>L'héritage permet à une classe de dériver des propriétés et des méthodes d'une autre classe.</p>
+            <pre><code>
+class Employee extends Person {
+    employeeId: number;
+
+    constructor(name: string, age: number, employeeId: number) {
+        super(name, age);
+        this.employeeId = employeeId;
+    }
+
+    displayEmployeeInfo() {
+        console.log(`Employee ID: ${this.employeeId}`);
+    }
+}
+
+const employee1 = new Employee("Bob", 25, 1234);
+employee1.greet();  // Output: Hello, my name is Bob and I am 25 years old.
+employee1.displayEmployeeInfo();  // Output: Employee ID: 1234
+            </code></pre>
+        </section>
+        <section id="access-modifiers">
+            <h2>Modificateurs d'accès</h2>
+            <p>TypeScript prend en charge les modificateurs d'accès public, private, et protected pour contrôler la visibilité des membres de classe.</p>
+            <pre><code>
+class Car {
+    private engine: string;
+
+    constructor(engine: string) {
+        this.engine = engine;
+    }
+
+    startEngine() {
+        console.log(`Engine ${this.engine} started.`);
+    }
+}
+
+const myCar = new Car("V8");
+// myCar.engine; // Error: Property 'engine' is private and only accessible within class 'Car'.
+myCar.startEngine();  // Output: Engine V8 started.
+            </code></pre>
+        </section>
+        <section id="interfaces">
+            <h2>Interfaces</h2>
+            <p>Les interfaces définissent des contrats que les classes peuvent implémenter. Elles ne contiennent pas de code exécutable.</p>
+            <pre><code>
+interface Drivable {
+    start(): void;
+    stop(): void;
+}
+
+class Vehicle implements Drivable {
+    start() {
+        console.log("Vehicle started");
+    }
+
+    stop() {
+        console.log("Vehicle stopped");
+    }
+}
+
+const myVehicle = new Vehicle();
+myVehicle.start();  // Output: Vehicle started
+myVehicle.stop();  // Output: Vehicle stopped
+            </code></pre>
+        </section>
+        <section id="polymorphism">
+            <h2>Polymorphisme</h2>
+            <p>Le polymorphisme permet d'utiliser une méthode de manière différente selon le contexte d'exécution.</p>
+            <pre><code>
+class Animal {
+    makeSound() {
+        console.log("Some generic animal sound");
+    }
+}
+
+class Dog extends Animal {
+    makeSound() {
+        console.log("Bark");
+    }
+}
+
+class Cat extends Animal {
+    makeSound() {
+        console.log("Meow");
+    }
+}
+
+const animals: Animal[] = [new Dog(), new Cat()];
+animals.forEach(animal => animal.makeSound());
+// Output:
+// Bark
+// Meow
+            </code></pre>
+        </section>
+        <section id="abstract-classes">
+            <h2>Classes Abstraites</h2>
+            <p>Les classes abstraites ne peuvent pas être instanciées directement. Elles sont destinées à être héritées par d'autres classes qui implémenteront les méthodes abstraites définies.</p>
+            <pre><code>
+abstract class Shape {
+    abstract area(): number;
+}
+
+class Circle extends Shape {
+    radius: number;
+
+    constructor(radius: number) {
+        super();
+        this.radius = radius;
+    }
+
+    area(): number {
+        return Math.PI * this.radius * this.radius;
+    }
+}
+
+const circle = new Circle(5);
+console.log(circle.area());  // Output: 78.53981633974483
+            </code></pre>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Présentation de la POO en TypeScript</p>
+    </footer>
+</body>
+</html>

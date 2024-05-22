@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000F0F;
+}
+
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+.main-button,
+.block {
+    padding: 5px 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Indie Flower', cursive;
+    border-radius:15px;
+    background-color:#0000FF;
+    color:#FFFF00;
+}
+
+.block {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #FFAF50;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease, transform 0.3s ease;
+}
+.block:hover{
+      background-color: #DDFF50;
+      color:#00000F;
+}
+
+.top {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 50px);
+}
+
+.right {
+    top: 50%;
+    right: 0;
+    transform: translate(-50px, -50%);
+}
+
+.bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50px);
+}
+
+.left {
+    top: 50%;
+    left: 0;
+    transform: translate(50px, -50%);
+}
+
+.container:hover .block {
+    opacity: 1;
+}
+
+.container:hover .top {
+    transform: translate(-50%, -100%);
+}
+
+.container:hover .right {
+    transform: translate(100%, -50%);
+}
+
+.container:hover .bottom {
+    transform: translate(-50%, 100%);
+}
+
+.container:hover .left {
+    transform: translate(-100%, -50%);
+}

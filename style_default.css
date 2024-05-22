@@ -1,0 +1,290 @@
+/* style.css */
+
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Ajoute une bordure personnalisée à certains éléments */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* Réinitialise les styles pour les éléments de liste imbriqués */
+ol, ul {
+    list-style: none;
+}
+
+/* Réinitialise les styles des éléments enfant de l'élément `blockquote` */
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* Réinitialise les styles pour les éléments de table */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Réinitialise les styles pour les éléments `input` et `textarea` */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+input[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Réinitialise les styles pour les éléments `button` */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/* Ajoute la boîte de bordure model au navigateur */
+* {
+    box-sizing: border-box;
+}
+
+/* Code Start Here */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(87,87,87,1) 50%, rgba(0,0,0,1) 100%);
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.screen-size {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.bloc {
+    position: relative;
+    width: 70%;
+    margin: 5px 0 2px 0;
+    background: linear-gradient(90deg, rgba(0,0,21,1) 0%, rgba(177,177,177,1) 50%, rgba(0,0,21,1) 100%);
+    transition: background-color 0.3s, height 0.3s, border-radius 0.3s;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 20px;
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #00BFFF;
+}
+
+.bloc:hover {
+    display: block;
+    height: 500px;
+    background-color: #bebebe;
+    border-radius: 15px;
+    width: 95%;
+}
+
+.blocTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    text-align: center;
+    transition: left 0.3s, transform 0.3s, color 0.3s, text-shadow 0.3s;
+    padding: 5px;
+    border-radius: 15px;
+    width: 80%;
+}
+
+.bloc:hover .blocTitle {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    border-radius: 0px 0px 15px 15px;
+    text-shadow: 0 0 5px #0FFfbb, 0 0 10px #0FFfbb, 0 0 15px #0FFfbb;
+    text-align: center;
+}
+
+/* Initial and hover styles for titles */
+.title1 {
+    color: #00BFFF;
+    background: linear-gradient(90deg, #333333 0%, #000000 50%, #333333 100%);
+}
+
+.title1:hover {
+    background-color: #FF5733;
+    color: #000000;
+}
+
+.title2 {
+    color: #00BFFF;
+    background: linear-gradient(90deg, #333333 0%, #000000 50%, #333333 100%);
+}
+
+.title2:hover {
+    background-color: #33FF57;
+    color: #000000;
+}
+
+.title3 {
+    color: #00BFFF;
+    background: linear-gradient(90deg, #333333 0%, #000000 50%, #333333 100%);
+}
+
+.title3:hover {
+    background-color: #E34F26;
+    color: #000000;
+}
+
+.title4 {
+    color: #00BFFF;
+    background: linear-gradient(90deg, #333333 0%, #000000 50%, #333333 100%);
+}
+
+.title4:hover {
+    background-color: #2965f1;
+    color: #000000;
+}
+
+.title5 {
+    color: #00BFFF;
+    background: linear-gradient(90deg, #333333 0%, #000000 50%, #333333 100%);
+}
+
+.title5:hover {
+    background-color: #F7DF1E;
+    color: #000000;
+}
+
+.title6 {
+    color: #00BFFF;
+    background: linear-gradient(90deg, #333333 0%, #000000 50%, #333333 100%);
+}
+
+.title6:hover {
+    background-color: #007ACC;
+    color: #000000;
+}
+
+.title7 {
+    color: #00BFFF;
+    background: linear-gradient(90deg, #333333 0%, #000000 50%, #333333 100%);
+}
+
+.title7:hover {
+    background-color: #F05032;
+    color: #000000;
+}
+
+.title8 {
+    color: #00BFFF;
+    background: linear-gradient(90deg, #333333 0%, #000000 50%, #333333 100%);
+}
+
+.title8:hover {
+    background-color: #FF0080;
+    color: #000000;
+}
+
+.title9 {
+    color: #00BFFF;
+    background: linear-gradient(90deg, #333333 0%, #000000 50%, #333333 100%);
+}
+
+.title9:hover {
+    background-color: #FFAA00;
+    color: #000000;
+}
+
+.title10 {
+    color: #00BFFF;
+    background: linear-gradient(90deg, #333333 0%, #000000 50%, #333333 100%);
+}
+
+.title10:hover {
+    background-color: #CC00FF;
+    color: #000000;
+}
+
+.blocContenuTitre {
+    background-color: #333;
+    padding: 5px;
+    margin: 5px;
+    width: 50%;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style non souligné sur les liens et couleur orange et bleu au hover */
+a {
+    text-decoration: none;
+    color: #1c7006;
+}
+
+a:hover {
+    color: orange;
+    text-decoration: none;
+}

@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 0.5em 0 0;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+.intro, .definition, .ux-design, .importance, .ux-ui, .resources, .feedback {
+    margin-bottom: 20px;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 10px;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.rating span {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.rating span:hover {
+    background-color: #f0f0f0;
+}

@@ -1,0 +1,54 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #282c34;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+}
+
+#bubbleButton {
+    padding: 15px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s ease; /* Animation de transition */
+}
+
+#bubbleButton:active {
+    transform: scale(0.95); /* Réduire légèrement la taille lorsqu'il est cliqué */
+}
+
+#bubbleButton:hover{
+  background-color: #F1dafb;
+  color:#00000F;
+}
+
+.bubble {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(97, 218, 251, 0.7);
+    border-radius: 50%;
+    animation: rise 4s linear forwards; /* Animation de montée */
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-100vh); /* Sortir de l'écran vers le haut */
+    }
+}

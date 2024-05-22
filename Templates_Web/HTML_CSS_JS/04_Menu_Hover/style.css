@@ -1,0 +1,254 @@
+/* style.css */
+
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Ajoute une bordure personnalisée à certains éléments */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* Réinitialise les styles pour les éléments de liste imbriqués */
+ol, ul {
+    list-style: none;
+}
+
+/* Réinitialise les styles des éléments enfant de l'élément `blockquote` */
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* Réinitialise les styles pour les éléments de table */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Réinitialise les styles pour les éléments `input` et `textarea` */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+input[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Réinitialise les styles pour les éléments `button` */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/* Ajoute la boîte de bordure model au navigateur */
+* {
+    box-sizing: border-box;
+}
+
+/* Code Start Here */
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.screen-size {
+  background-color: #fff; /* Couleur de fond */
+  padding: 10px; /* Espacement intérieur */
+  border-radius: 5px; /* Bordure arrondie */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre */
+  font-size: 16px; /* Taille de police */
+  margin-bottom: 10px; /* Marge en bas */
+  text-align: center; /* Alignement du texte au centre */
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Afficher les blocs l'un en dessous de l'autre */
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.bloc {
+  position: relative;
+  width: 70%;
+  margin: 5px 0 2px 0; /* Réduire la marge inférieure entre les blocs */
+  background: linear-gradient(90deg, rgba(0,0,21,1) 0%, rgba(177,177,177,1) 50%, rgba(0,0,21,1) 100%);
+  transition: background-color 0.3s, height 0.3s, border-radius 0.3s;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 20px; /* Hauteur par défaut */
+  padding-top: 40px; /* Ajouter un padding en haut */
+  padding-left: 10px; /* Ajouter un padding à gauche */
+  padding-right: 10px; /* Ajouter un padding à droite */
+  color:#0FFfbb;
+}
+
+.bloc:hover {
+  display: block; /* Afficher le contenu au survol */
+  height: 500px; /* Hauteur au survol */
+  background-color: #bebebe;
+  border-radius: 15px;
+  width: 95%; /* Largeur de 95% au survol */
+}
+
+
+.bloc1 {
+
+}
+
+
+
+
+.blocTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) ;
+  font-size: 20px;
+  text-align: center;
+  transition: left 0.3s, transform 0.3s, color 0.3s, text-shadow 0.3s;
+  padding: 5px;
+  border-radius: 15px;
+  width: 80%;
+}
+
+
+.bloc:hover .blocTitle {
+  top: 0; /* Positionner le titre au haut du bloc parent */
+  left: 50%; /* Positionner le titre au milieu du bloc parent */
+  transform: translateX(-50%); /* Déplacer le titre horizontalement de moitié de sa propre largeur vers la gauche */
+  width: 100%; /* Modifier la largeur pour qu'elle soit à 100% */
+  border-radius: 0px 0px 15px 15px;
+  text-shadow: 0 0 5px #0FFfbb, 0 0 10px #0FFfbb, 0 0 15px #0FFfbb;
+  text-align: center; /* Aligner le texte au centre */
+}
+
+
+.title1 {
+  color: #000000;
+  background-color: #FF5733;
+}
+
+.title2 {
+  color: #000000;
+  background-color: #33FF57;
+}
+
+.title3 {
+  color: #000000;
+  background-color: #E34F26;
+}
+
+.title4 {
+  color: #000000;
+  background-color:  #2965f1;
+}
+
+.title5 {
+  color: #000000;
+  background-color: #F7DF1E;
+}
+
+.title6 {
+  color: #000000;
+  background-color:  #007ACC;
+}
+
+.title7 {
+  color: #000000;
+  background-color: #F05032;
+}
+
+.title8 {
+  color: #000000;
+  background-color: #FF0080;
+}
+
+.title9 {
+  color: #000000;
+  background-color: #FFAA00;
+}
+
+.title10 {
+  color: #000000;
+  background-color: #CC00FF;
+}
+
+
+.blocContenuTitre{
+  background-color: #333;
+  padding:5px;
+  margin:5px;
+  width: 50%;
+}
+
+
+
+
+
+footer {
+  position: fixed; /* Position fixe pour que le footer reste en bas de la fenêtre du navigateur */
+  left: 0;
+  bottom: 0; /* Coller le footer en bas de la page */
+  width: 100%; /* Pleine largeur */
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style non souligné sur les liens et couleur orange et bleu au hover */
+a {
+  text-decoration: none;
+  color: #1c7006;
+}
+
+a:hover {
+  color: orange;
+  text-decoration: none;
+}
