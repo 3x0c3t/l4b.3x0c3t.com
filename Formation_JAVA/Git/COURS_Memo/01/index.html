@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commandes Git et GitHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Commandes Git et GitHub</h1>
+    <h2>Configuration</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">git config --global user.name "Votre Nom"</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Définit votre nom d'utilisateur Git globalement.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git config --global user.email "votre_email@example.com"</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Définit votre adresse e-mail Git globalement.</div>
+        </li>
+    </ul>
+
+    <h2>Dépôt</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">git init</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Initialise un nouveau dépôt Git.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git clone &lt;url&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Clone un dépôt distant.</div>
+        </li>
+    </ul>
+
+    <h2>Modification et Validation</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">git add &lt;fichier&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Ajoute un fichier à l'index (staging area).</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git add .</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Ajoute tous les fichiers modifiés à l'index.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git commit -m "Message de validation"</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Crée un commit avec un message descriptif.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git commit -a -m "Message de validation"</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Committe tous les fichiers modifiés et ajoutés sans utiliser <code>git add</code>.</div>
+        </li>
+    </ul>
+
+    <h2>Visualisation de l'État</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">git status</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Affiche l'état des fichiers dans le répertoire de travail et l'index.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git log</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Affiche l'historique des commits.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git log --oneline</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Affiche l'historique des commits en format condensé.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git diff</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Affiche les différences entre les modifications non validées.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git diff --staged</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Affiche les différences entre les modifications ajoutées et le dernier commit.</div>
+        </li>
+    </ul>
+
+    <h2>Branches</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">git branch</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Liste les branches locales.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git branch &lt;nom_de_branche&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Crée une nouvelle branche.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git checkout &lt;nom_de_branche&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Change de branche.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git checkout -b &lt;nom_de_branche&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Crée une nouvelle branche et bascule dessus.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git merge &lt;nom_de_branche&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Fusionne une branche dans la branche courante.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git branch -d &lt;nom_de_branche&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Supprime une branche localement.</div>
+        </li>
+    </ul>
+
+    <h2>Remotes</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">git remote</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Liste les remotes configurés.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git remote add &lt;nom&gt; &lt;url&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Ajoute un nouveau remote.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git fetch &lt;remote&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Récupère les objets et les références d'un dépôt distant.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git pull &lt;remote&gt; &lt;branche&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Récupère les modifications du dépôt distant et les fusionne dans la branche courante.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git push &lt;remote&gt; &lt;branche&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Envoie les commits de la branche locale vers le dépôt distant.</div>
+        </li>
+    </ul>
+
+    <h2>Commandes Avancées</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">git reset &lt;commit&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Réinitialise la tête de la branche actuelle à un commit spécifique.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git reset --hard &lt;commit&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Réinitialise la tête de la branche actuelle à un commit spécifique et supprime les modifications dans l'index et le répertoire de travail.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git rebase &lt;branche&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Applique les commits de la branche courante sur une autre branche.</div>
+        </li>
+    </ul>
+
+    <h2>Stash</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">git stash</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Enregistre temporairement les modifications dans l'index et le répertoire de travail.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git stash pop</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Applique les modifications sauvegardées et les supprime de la pile des stashs.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git stash list</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Liste tous les stashs sauvegardés.</div>
+        </li>
+    </ul>
+
+    <h2>Bisect</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">git bisect start</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Commence une bissection pour trouver un commit défectueux.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git bisect good &lt;commit&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Marque un commit comme bon.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git bisect bad &lt;commit&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Marque un commit comme mauvais.</div>
+        </li>
+    </ul>
+
+    <h2>Tag</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">git tag &lt;nom_du_tag&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Crée un tag léger.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git tag -a &lt;nom_du_tag&gt; -m "Message du tag"</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Crée un tag annoté.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git push &lt;remote&gt; &lt;nom_du_tag&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Pousse un tag vers le dépôt distant.</div>
+        </li>
+    </ul>
+
+    <h2>Récupération et Revert</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">git checkout -- &lt;fichier&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Annule les modifications dans le répertoire de travail.</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">git revert &lt;commit&gt;</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Crée un commit qui annule un commit spécifique.</div>
+        </li>
+    </ul>
+
+    <h2>Commandes pour Collaborer avec GitHub</h2>
+    <ul class="command-list">
+        <li>
+            <div class="command-container">
+                <div class="command">gh issue create</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Crée une nouvelle issue (nécessite GitHub CLI).</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">gh pr create</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Crée une nouvelle pull request (nécessite GitHub CLI).</div>
+        </li>
+        <li>
+            <div class="command-container">
+                <div class="command">gh pr merge</div>
+                <button class="copy-btn" onclick="copyCommand(this)">Copier</button>
+            </div>
+            <div class="description">Merge une pull request (nécessite GitHub CLI).</div>
+        </li>
+    </ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

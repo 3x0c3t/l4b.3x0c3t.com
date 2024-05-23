@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Conditions JavaScript</title>
+</head>
+<body>
+    <h1>Exemples de conditions en JavaScript</h1>
+    <label for="userName">Entrez votre prénom :</label>
+    <input type="text" id="userNameInput">
+    <br>
+    <label for="password">Entrez le mot de passe :</label>
+    <input type="password" id="passwordInput">
+    <button onclick="showMessage()">Valider</button>
+    
+    <br>
+    TUPEUXPASTEST est le mot de passe correct
+    <br>
+
+    <p id="message"></p>
+
+    <pre>
+        <code>
+            // Fonction pour afficher un message en fonction du mot de passe saisi
+            function showMessage() {
+                let userName = document.getElementById('userNameInput').value;
+                let password = document.getElementById('passwordInput').value;
+                let messageElement = document.getElementById('message');
+                
+                switch (password) {
+                    case "TUPEUXPASTEST":
+                        let greetingMessage = "Bien le BOnjouRRRR " + userName + "!";
+                        messageElement.innerText = greetingMessage;
+                        messageElement.style.fontSize = "36px";
+                        messageElement.style.fontWeight = "bold";
+                        // Afficher en vert
+                        messageElement.style.color = "green";
+                        // Appliquer le style clignotant
+                        setInterval(function(){
+                            if(messageElement.style.visibility === 'hidden'){
+                                messageElement.style.visibility = 'visible';
+                            } else {
+                                messageElement.style.visibility = 'hidden';
+                            }
+                        }, 500);
+                        break;
+                    default:
+                        messageElement.innerText = "MOT DE PASSE Incorrect " + userName;
+                        // Afficher en rouge
+                        messageElement.style.color = "red";
+                        break;
+                }
+                
+                // Afficher le mot de passe en clair près du champ de saisie (pour le test)
+                alert("Le mot de passe saisi est : " + password);
+            }
+        </code>
+    </pre>
+
+    <h2>Exemple avec l'opérateur ternaire</h2>
+    <label for="favoriteColor">Quelle est votre couleur préférée ?</label>
+    <input type="text" id="favoriteColorInput">
+    <button onclick="showFavoriteColorMessage()">Valider</button>
+    <p id="favoriteColorMessage"></p>
+    
+    <script>
+        function showFavoriteColorMessage() {
+            let favoriteColor = document.getElementById('favoriteColorInput').value;
+            let messageElement = document.getElementById('favoriteColorMessage');
+    
+            // Utilisation de l'opérateur ternaire pour afficher un message en fonction de la couleur préférée
+            let message = (favoriteColor === "bleu") ? "Bleu est une excellente couleur!" : "Désolé, nous ne pouvons pas valider votre choix.";
+            
+            messageElement.innerText = message;
+        }
+    </script>
+</body>
+</html>
