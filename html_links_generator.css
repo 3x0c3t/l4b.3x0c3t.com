@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour les appareils mobiles */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    li {
+        margin-bottom: 5px;
+    }
+}
+
+/* Styles pour les écrans plus larges */
+@media only screen and (min-width: 601px) {
+    body {
+        font-size: 16px;
+    }
+}
