@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affichage des commandes Linux</title>
+</head>
+<body>
+
+<h1>Liste des commandes Linux</h1>
+
+<?php
+// Récupérer les informations de connexion à partir des variables d'environnement
+$servername = getenv("DB_SERVER");
+$username = getenv("DB_USERNAME");
+$password = getenv("DB_PASSWORD");
+$database = getenv("DB_DATABASE");
+
+// Établir une connexion à la base de données
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Vérifier la connexion
+if ($conn->connect_error) {
+    die("La connexion à la base de données a échoué : " . $conn->connect_error);
+}
+
+// Exécuter une requête SQL pour récupérer les données de la base de données
+$sql = "SELECT * FROM linux_commands";
+$result = $conn->query($sql);
+
+// Afficher les données dans une table HTML
+if ($result->num_rows > 0) {
+    echo "<table border='1'>";
+    echo "<tr><th>Commande</th><th>Catégorie</th><th>Description</th><th>Exemple</th></tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>" . $row["nom"] . "</td><td>" . $row["categorie"] . "</td><td>" . $row["description"] . "</td><td>" . $row["exemple"] . "</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "Aucune commande trouvée dans la base de données.";
+}
+
+// Fermer la connexion à la base de données
+$conn->close();
+?>
+
+</body>
+</html>

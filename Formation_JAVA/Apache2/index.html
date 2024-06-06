@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apache2 Cheat Sheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Apache2 Cheat Sheet</h1>
+            <nav>
+                <a href="https://l4b.3x0c3t.com/">Retour vers L4B</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="command-block">
+            <h2>Gestion d'Apache2</h2>
+            <p>Démarrer Apache2 : <button id="startBtn" data-command="sudo systemctl start apache2">sudo systemctl start apache2</button></p>
+            <p>Arrêter Apache2 : <button id="stopBtn" data-command="sudo systemctl stop apache2">sudo systemctl stop apache2</button></p>
+            <p>Redémarrer Apache2 : <button id="restartBtn" data-command="sudo systemctl restart apache2">sudo systemctl restart apache2</button></p>
+            <p>Vérifier le statut d'Apache2 : <button id="statusBtn" data-command="sudo systemctl status apache2">sudo systemctl status apache2</button></p>
+        </div>
+
+        <div class="command-block">
+            <h2>Localisation des fichiers de configuration</h2>
+            <pre>
+/etc/apache2/apache2.conf
+/etc/apache2/httpd.conf
+/etc/apache2/ports.conf
+/etc/apache2/sites-available/
+/etc/apache2/sites-enabled/
+/etc/apache2/conf-available/
+/etc/apache2/conf-enabled/
+            </pre>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

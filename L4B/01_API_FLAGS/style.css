@@ -19,6 +19,11 @@ header, footer {
   margin:5px;
 }
 
+h1{
+  background-color: aqua;
+}
+
+
 main {
   height: 80%;
   overflow-y: auto;
@@ -42,6 +47,7 @@ main {
   flex-direction: column;
   align-items: center;
   width: 150px;
+
 }
 
 .flag {
@@ -49,6 +55,7 @@ main {
   height: 100px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   margin-bottom: 10px;
+  border-radius: 15px;
 }
 
 .country-name {

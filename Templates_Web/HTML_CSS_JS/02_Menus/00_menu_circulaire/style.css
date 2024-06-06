@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #112255;
+}
+
+#menu {
+    position: relative;
+    width: 200px; /* ajustez la taille du menu selon vos besoins */
+    height: 200px; /* ajustez la taille du menu selon vos besoins */
+    background-color: aqua;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+}
+
+.menu-btn {
+    position: absolute;
+    width: 40px; /* ajustez la taille des boutons selon vos besoins */
+    height: 40px; /* ajustez la taille des boutons selon vos besoins */
+    border-radius: 50%; /* rendre les boutons ronds */
+    background-color: #3498db; /* couleur de fond des boutons */
+    color: #fff; /* couleur du texte des boutons */
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+
+
+/* Positionnez les boutons autour du cercle */
+.menu-btn:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-btn:nth-child(2) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-btn:nth-child(3) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.menu-btn:nth-child(4) {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.menu-btn:nth-child(5) {
+    top: calc(50% - 20px); /* calcul de la position en fonction de la taille des boutons */
+    left: calc(50% - 20px); /* calcul de la position en fonction de la taille des boutons */
+}
+
+.menu-btn:nth-child(6) {
+    top: calc(50% - 20px); /* calcul de la position en fonction de la taille des boutons */
+    right: calc(50% - 20px); /* calcul de la position en fonction de la taille des boutons */
+}
+
+.menu-btn:nth-child(7) {
+    top: 17.5%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-btn:nth-child(8) {
+    top: 17.5%;
+    right: 17.5%;
+    transform: translate(50%, -50%);
+}
+
+.menu-btn:nth-child(9) {
+    bottom: 17.5%;
+    left: 17.5%;
+    transform: translate(-50%, 50%);
+}
+
+.menu-btn:nth-child(10) {
+    bottom: 17.5%;
+    right: 17.5%;
+    transform: translate(50%, 50%);
+}

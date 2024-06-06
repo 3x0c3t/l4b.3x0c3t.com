@@ -1,0 +1,74 @@
+/* Mobile-first styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 10px;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px; /* Réduit l'espace entre les blocs de commandes */
+}
+
+.command {
+    background-color: #f9f9f9;
+    padding: 5px; /* Réduit le padding pour réduire la hauteur */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px; /* Réduit l'espace entre les blocs de commandes */
+}
+
+.command:hover {
+    background-color: #eaeaea;
+}
+
+.command h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.command p {
+    margin: 2px 0; /* Réduit l'espace entre le titre et la description */
+    color: #666;
+}
+
+/* Styles for larger screens */
+@media (min-width: 600px) {
+    main {
+        padding: 20px;
+    }
+
+    .command {
+        padding: 10px; /* Ajuste le padding pour les écrans plus larges */
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        padding: 40px;
+    }
+
+    .command {
+        padding: 15px; /* Ajuste le padding pour les écrans plus larges */
+        margin-bottom: 10px; /* Ajuste l'espace entre les blocs de commandes */
+    }
+}

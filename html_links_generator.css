@@ -1,12 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 20px;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #e4e4e4;
 }
 
 h1 {
     text-align: center;
+    background-color: aqua;
 }
 
 ul {
@@ -24,7 +25,8 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    color:#c41d11;
+    
 }
 
 /* Styles pour les appareils mobiles */

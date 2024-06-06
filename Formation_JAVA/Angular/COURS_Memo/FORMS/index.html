@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résumé des Formulaires Angular</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Résumé des Formulaires Angular</h1>
+
+        <section>
+            <h2>Formulaires pilotés par le template</h2>
+            <p>Les formulaires pilotés par le template sont simples et intuitifs, surtout pour les débutants. Ils reposent principalement sur le template HTML pour définir le formulaire et ses validations.</p>
+            <h3>Étapes :</h3>
+            <ol>
+                <li>Importer <code>FormsModule</code> dans votre module.</li>
+                <li>Créer le template HTML en utilisant des directives comme <code>ngModel</code> et <code>ngForm</code>.</li>
+                <li>Gérer les soumissions de formulaires et les validations dans le composant.</li>
+            </ol>
+            <h3>Exemple :</h3>
+            <pre><code>&lt;form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)"&gt;
+  &lt;label for="name"&gt;Nom :&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" ngModel required&gt;
+  &lt;div *ngIf="myForm.submitted && !myForm.controls.name?.valid"&gt;
+    Le nom est requis.
+  &lt;/div&gt;
+
+  &lt;label for="email"&gt;Email :&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" ngModel required email&gt;
+  &lt;div *ngIf="myForm.submitted && !myForm.controls.email?.valid"&gt;
+    Un email valide est requis.
+  &lt;/div&gt;
+
+  &lt;button type="submit"&gt;Soumettre&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2>Formulaires réactifs</h2>
+            <p>Les formulaires réactifs offrent plus de contrôle et de flexibilité, surtout pour les formulaires complexes. Ils sont basés sur une approche pilotée par le modèle en utilisant des objets dans le composant TypeScript.</p>
+            <h3>Étapes :</h3>
+            <ol>
+                <li>Importer <code>ReactiveFormsModule</code> dans votre module.</li>
+                <li>Créer le modèle de formulaire dans le composant TypeScript en utilisant <code>FormBuilder</code>, <code>FormGroup</code>, et <code>FormControl</code>.</li>
+                <li>Créer le template HTML en utilisant des directives comme <code>formGroup</code> et <code>formControlName</code>.</li>
+            </ol>
+            <h3>Exemple :</h3>
+            <pre><code>// Composant TypeScript
+myForm: FormGroup;
+
+constructor(private fb: FormBuilder) {}
+
+ngOnInit(): void {
+  this.myForm = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]]
+  });
+}
+
+onSubmit(): void {
+  if (this.myForm.valid) {
+    console.log('Données du formulaire : ', this.myForm.value);
+  }
+}
+
+// Template HTML
+&lt;form [formGroup]="myForm" (ngSubmit)="onSubmit()"&gt;
+  &lt;label for="name"&gt;Nom :&lt;/label&gt;
+  &lt;input type="text" id="name" formControlName="name"&gt;
+  &lt;div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched"&gt;
+    Le nom est requis.
+  &lt;/div&gt;
+
+  &lt;label for="email"&gt;Email :&lt;/label&gt;
+  &lt;input type="email" id="email" formControlName="email"&gt;
+  &lt;div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched"&gt;
+    Un email valide est requis.
+  &lt;/div&gt;
+
+  &lt;button type="submit" [disabled]="myForm.invalid"&gt;Soumettre&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2>Comparaison</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Formulaires pilotés par le template</th>
+                        <th>Formulaires réactifs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Approche</td>
+                        <td>Déclarative (template HTML)</td>
+                        <td>Impérative (composant TypeScript)</td>
+                    </tr>
+                    <tr>
+                        <td>Cas d'utilisation</td>
+                        <td>Formulaires simples</td>
+                        <td>Formulaires complexes</td>
+                    </tr>
+                    <tr>
+                        <td>Contrôle</td>
+                        <td>Moins de contrôle</td>
+                        <td>Plus de contrôle</td>
+                    </tr>
+                    <tr>
+                        <td>Validation</td>
+                        <td>Basée sur le template</td>
+                        <td>Basée sur le code</td>
+                    </tr>
+                    <tr>
+                        <td>Flexibilité</td>
+                        <td>Moins flexible</td>
+                        <td>Plus flexible</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>

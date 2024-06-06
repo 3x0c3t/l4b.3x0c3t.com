@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+header {
+    background-color: #dc3545; /* Rouge */
+    color: #fff;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 15px;
+    padding: 20px;
+    background-color: #c9c9c9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    color: #dc3545; /* Rouge */
+    margin-top: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #dc3545; /* Rouge */
+}
+
+a:hover {
+    color: #dc3545; /* Rouge */
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    background-color: #dc3545; /* Rouge */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #c82333; /* Rouge foncé */
+}
+
+.command-block {
+    margin-bottom: 40px;
+}
+
+pre {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f8f9fa; /* Gris clair */
+    color: #333;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+code {
+    font-family: monospace;
+    color: #dc3545; /* Rouge */
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

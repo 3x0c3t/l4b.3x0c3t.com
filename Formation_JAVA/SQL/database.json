@@ -1,0 +1,43 @@
+{
+  "Commandes pour se connecter, démarrer, arrêter et contrôler le serveur MySQL": [
+    { "command": "mysql -u [utilisateur] -p", "description": "Se connecter à la base de données MySQL." },
+    { "command": "sudo service mysql start", "description": "Démarrer le serveur MySQL." },
+    { "command": "sudo service mysql stop", "description": "Arrêter le serveur MySQL." },
+    { "command": "sudo service mysql restart", "description": "Redémarrer le serveur MySQL." },
+    { "command": "sudo service mysql status", "description": "Vérifier l'état du serveur MySQL." }
+  ],
+  "Connexion au Service SQL": [
+    { "command": "mysql -u username -p", "description": "Se connecter à MySQL en tant qu'utilisateur spécifique." },
+    { "command": "psql -U username -d database_name", "description": "Se connecter à PostgreSQL en tant qu'utilisateur spécifique et base de données." },
+    { "command": "sqlplus username/password@host:port/service_name", "description": "Se connecter à Oracle SQL*Plus avec les détails de connexion." }
+  ],
+  "Sécurité": [
+    { "command": "CREATE USER", "description": "Crée un nouvel utilisateur dans la base de données." },
+    { "command": "DROP USER", "description": "Supprime un utilisateur de la base de données." },
+    { "command": "GRANT", "description": "Accorde des privilèges à un utilisateur ou un rôle." },
+    { "command": "REVOKE", "description": "Révoque des privilèges d'un utilisateur ou un rôle." },
+    { "command": "ALTER USER", "description": "Modifie les attributs d'un utilisateur existant." },
+    { "command": "SET PASSWORD FOR", "description": "Définit un nouveau mot de passe pour un utilisateur." },
+    { "command": "SHOW GRANTS FOR", "description": "Affiche les privilèges accordés à un utilisateur." },
+    { "command": "RENAME USER", "description": "Renomme un utilisateur existant." },
+    { "command": "REVOKE ALL PRIVILEGES, GRANT OPTION FROM", "description": "Révoque tous les privilèges et options de l'utilisateur." }
+  ],
+  "Gestion des données": [
+    { "command": "INSERT INTO", "description": "Insère une nouvelle ligne dans une table." },
+    { "command": "SELECT", "description": "Récupère des données depuis une ou plusieurs tables." },
+    { "command": "UPDATE", "description": "Met à jour les données dans une table." },
+    { "command": "DELETE FROM", "description": "Supprime des lignes d'une table." }
+  ],
+  "Transactions": [
+    { "command": "START TRANSACTION", "description": "Démarre une transaction." },
+    { "command": "COMMIT", "description": "Valide une transaction enregistrée." },
+    { "command": "ROLLBACK", "description": "Annule une transaction enregistrée." }
+  ],
+  "Autres": [
+    { "command": "SHOW DATABASES", "description": "Affiche la liste des bases de données disponibles." },
+    { "command": "SHOW TABLES", "description": "Affiche la liste des tables dans une base de données." },
+    { "command": "DESCRIBE", "description": "Affiche la structure d'une table." },
+    { "command": "USE", "description": "Sélectionne une base de données à utiliser." },
+    { "command": "TRUNCATE TABLE", "description": "Supprime toutes les lignes d'une table." }
+  ]
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Prompt pour Composants Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur de Prompt pour Composants Web</h1>
+        <form id="promptForm">
+            <label for="componentName">Nom du Composant:</label>
+            <input type="text" id="componentName" name="componentName" required>
+            
+            <label for="features">Fonctionnalités:</label>
+            <textarea id="features" name="features" rows="5" required></textarea>
+            
+            <button type="submit">Générer le Prompt</button>
+        </form>
+        
+        <h2>Prompt Généré:</h2>
+        <pre id="generatedPrompt"></pre>
+        
+        <button id="copyButton">Copier</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* Style pour une approche mobile-first et responsive */
+
+/* Couleur de fond noir clair */
+body {
+    background: radial-gradient(circle, rgba(44,53,54,1) 0%, rgba(211,251,255,1) 80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: ;
+
+}
+
+/* Conteneur centré */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(44, 44, 44);
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 15px 8px rgba(0,0,0,0.45); 
+box-shadow: 0px 0px 15px 8px rgba(0,0,0,0.45);
+}
+
+/* Style des blocs */
+.block {
+    display: flex; /* Utiliser Flexbox pour centrer le contenu */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    text-align: center;
+    margin: 5px;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(218,224,225,1) 50%, rgba(255,255,255,1) 100%);
+    border-radius: 15px;
+    width: 100px;
+    height: 100px;
+    -webkit-box-shadow: 0px 0px 15px 8px rgba(0,0,0,0.45); 
+    box-shadow: 0px 0px 1px 1px rgba(104, 104, 104, 0.45);
+}
+
+.block:hover{
+    background: radial-gradient(circle, rgba(218,224,225,1) 0%, rgba(255,255,255,1) 50%, rgba(218,224,225,1) 100%);
+    box-shadow: 0px 0px 1px 1px rgb(255, 255, 255);
+}
+
+
+
+/* Media query pour grands écrans */
+@media (min-width: 600px) {
+    .block {
+        width: 150px;
+        height: 150px;
+    }
+}

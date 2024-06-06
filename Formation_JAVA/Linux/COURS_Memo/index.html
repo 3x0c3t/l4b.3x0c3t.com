@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commandes Linux</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://l4b.3x0c3t.com/html_links_generator.html">Link Generator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Commandes Linux par Thématique</h1>
+    <div class="container">
+        <div class="section" id="dossiers">
+            <h2>Dossiers</h2>
+            <ul>
+                <li>
+                    <code>ls</code> Liste les fichiers et répertoires
+                    <button onclick="copyCommand('ls', this)">Copier</button>
+                </li>
+                <li>
+                    <code>cd</code> Change de répertoire
+                    <button onclick="copyCommand('cd', this)">Copier</button>
+                </li>
+                <li>
+                    <code>mkdir</code> Crée un nouveau répertoire
+                    <button onclick="copyCommand('mkdir', this)">Copier</button>
+                </li>
+                <li>
+                    <code>rmdir</code> Supprime un répertoire vide
+                    <button onclick="copyCommand('rmdir', this)">Copier</button>
+                </li>
+                <li>
+                    <code>pwd</code> Affiche le répertoire courant
+                    <button onclick="copyCommand('pwd', this)">Copier</button>
+                </li>
+            </ul>
+        </div>
+        <div class="section" id="fichiers">
+            <h2>Fichiers</h2>
+<ul>
+    <li>
+        <code>cat</code> Affiche le contenu d'un fichier
+        <button onclick="copyCommand('cat', this)">Copier</button>
+    </li>
+    <li>
+        <code>cat file1 file2</code> Affiche le contenu de plusieurs fichiers
+        <button onclick="copyCommand('cat file1 file2', this)">Copier</button>
+    </li>
+    <li>
+        <code>cat *.txt</code> Affiche le contenu de tous les fichiers texte
+        <button onclick="copyCommand('cat *.txt', this)">Copier</button>
+    </li>
+    <li>
+        <code>touch</code> Crée un fichier vide ou met à jour la date d'un fichier
+        <button onclick="copyCommand('touch', this)">Copier</button>
+    </li>
+    <li>
+        <code>nano</code> Éditeur de texte en ligne de commande
+        <button onclick="copyCommand('nano', this)">Copier</button>
+    </li>
+    <li>
+        <code>vi</code> Éditeur de texte avancé
+        <button onclick="copyCommand('vi', this)">Copier</button>
+    </li>
+    <li>
+        <code>less</code> Affiche le contenu d'un fichier page par page
+        <button onclick="copyCommand('less', this)">Copier</button>
+    </li>
+</ul>
+
+        </div>
+        <div class="section" id="recherche">
+            <h2>Recherche</h2>
+            <ul>
+                <li>
+                    <code>find</code> Recherche des fichiers et répertoires
+                    <button onclick="copyCommand('find', this)">Copier</button>
+                </li>
+                <li>
+                    <code>grep</code> Recherche des chaînes de caractères dans un fichier
+                    <button onclick="copyCommand('grep', this)">Copier</button>
+                </li>
+                <li>
+                    <code>locate</code> Trouve rapidement des fichiers par nom
+                    <button onclick="copyCommand('locate', this)">Copier</button>
+                </li>
+                <li>
+                    <code>which</code> Trouve l'emplacement d'un exécutable
+                    <button onclick="copyCommand('which', this)">Copier</button>
+                </li>
+                <li>
+                    <code>whereis</code> Trouve les fichiers binaires, sources et de manuel
+                    <button onclick="copyCommand('whereis', this)">Copier</button>
+                </li>
+            </ul>
+        </div>
+        <div class="section" id="modifications">
+            <h2>Modifications</h2>
+            <ul>
+                <li>
+                    <code>cp</code> Copie des fichiers et répertoires
+                    <button onclick="copyCommand('cp', this)">Copier</button>
+                </li>
+                <li>
+                    <code>mv</code> Déplace ou renomme des fichiers et répertoires
+                    <button onclick="copyCommand('mv', this)">Copier</button>
+                </li>
+                <li>
+                    <code>rm</code> Supprime des fichiers ou répertoires
+                    <button onclick="copyCommand('rm', this)">Copier</button>
+                </li>
+                <li>
+                    <code>chmod</code> Change les permissions des fichiers
+                    <button onclick="copyCommand('chmod', this)">Copier</button>
+                </li>
+                <li>
+                    <code>chown</code> Change le propriétaire des fichiers
+                    <button onclick="copyCommand('chown', this)">Copier</button>
+                </li>
+            </ul>
+        </div>
+        <div class="section" id="scripts">
+            <h2>Scripts</h2>
+            <ul>
+                <li>
+                    <code>bash</code> Lance un script bash
+                    <button onclick="copyCommand('bash', this)">Copier</button>
+                </li>
+                <li>
+                    <code>sh</code> Lance un script shell
+                    <button onclick="copyCommand('sh', this)">Copier</button>
+                </li>
+                <li>
+                    <code>./script.sh</code> Exécute un script local
+                    <button onclick="copyCommand('./script.sh', this)">Copier</button>
+                </li>
+                <li>
+                    <code>crontab</code> Programme des tâches automatiques
+                    <button onclick="copyCommand('crontab', this)">Copier</button>
+                </li>
+                <li>
+                    <code>at</code> Programme une commande à exécuter plus tard
+                    <button onclick="copyCommand('at', this)">Copier</button>
+                </li>
+            </ul>
+        </div>
+        <div class="section" id="ssh">
+            <h2>SSH</h2>
+            <ul>
+                <li>
+                    <code>ssh</code> Se connecte à un serveur distant via SSH
+                    <button onclick="copyCommand('ssh', this)">Copier</button>
+                </li>
+                <li>
+                    <code>scp</code> Copie des fichiers entre hôtes via SSH
+                    <button onclick="copyCommand('scp', this)">Copier</button>
+                </li>
+                <li>
+                    <code>ssh-keygen</code> Génère des clés SSH
+                    <button onclick="copyCommand('ssh-keygen', this)">Copier</button>
+                </li>
+                <li>
+                    <code>ssh-agent</code> Démarre un agent pour les clés SSH
+                    <button onclick="copyCommand('ssh-agent', this)">Copier</button>
+                </li>
+                <li>
+                    <code>ssh-add</code> Ajoute une clé privée à l'agent SSH
+                    <button onclick="copyCommand('ssh-add', this)">Copier</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthétiseur Avancé</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="synth-container">
+        <h1>Synthétiseur Avancé</h1>
+        <canvas id="oscilloscope" width="600" height="200"></canvas>
+        <div class="controls">
+            <div class="control">
+                <label for="volume">Volume</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+                <span id="volume-value">50</span>
+            </div>
+            <div class="control">
+                <label for="frequency">Fréquence</label>
+                <input type="range" id="frequency" min="20" max="20000" value="440">
+                <span id="frequency-value">440 Hz</span>
+            </div>
+            <div class="control">
+                <label for="waveform">Forme d'onde</label>
+                <select id="waveform">
+                    <option value="sine">Sinusoïdale</option>
+                    <option value="square">Carrée</option>
+                    <option value="sawtooth">Dent de scie</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+            </div>
+            <div class="control">
+                <label for="tempo">Tempo</label>
+                <input type="number" id="tempo" min="30" max="300" value="120">
+                <span>BPM</span>
+            </div>
+            <button id="play">Jouer</button>
+            <button id="stop">Arrêter</button>
+            <button id="snare">Caisse Claire</button>
+            <button id="start-snare-automation">Automatisme Caisse Claire</button>
+        </div>
+        <div class="piano-container">
+            <div class="octave">
+                <div class="key white" data-note="C" data-key="q">Q</div>
+                <div class="key black" data-note="C#" data-key="z">Z</div>
+                <div class="key white" data-note="D" data-key="s">S</div>
+                <div class="key black" data-note="D#" data-key="e">E</div>
+                <div class="key white" data-note="E" data-key="d">D</div>
+                <div class="key white" data-note="F" data-key="f">F</div>
+                <div class="key black" data-note="F#" data-key="t">T</div>
+                <div class="key white" data-note="G" data-key="g">G</div>
+                <div class="key black" data-note="G#" data-key="y">Y</div>
+                <div class="key white" data-note="A" data-key="h">H</div>
+                <div class="key black" data-note="A#" data-key="u">U</div>
+                <div class="key white" data-note="B" data-key="j">J</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

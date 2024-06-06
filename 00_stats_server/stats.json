@@ -1,0 +1,11 @@
+{
+    "execution_time": "2024-06-02 12:00:24",
+    "connected_clients": [
+    ],
+    "memory_info": {
+        "total": "1.9Gi", "used": "1.6Gi", "free": "108Mi"
+    },
+    "disk_space": [
+        {"filesystem": "/dev/sda1", "size": "20G", "used": "13G", "avail": "6.9G", "use_percent": "65%"},{"filesystem": "/dev/sda15", "size": "105M", "used": "6.1M", "avail": "99M", "use_percent": "6%"}
+    ]
+}

@@ -1,0 +1,47 @@
+Commandes de gestion de base de données (DDL - Data Definition Language) :
+
+    CREATE DATABASE : Créer une nouvelle base de données.
+    DROP DATABASE : Supprimer une base de données.
+    CREATE TABLE : Créer une nouvelle table.
+    DROP TABLE : Supprimer une table.
+    ALTER TABLE : Modifier la structure d'une table existante.
+    CREATE INDEX : Créer un index sur une table.
+    DROP INDEX : Supprimer un index.
+
+Commandes de gestion des données (DML - Data Manipulation Language) :
+
+    INSERT INTO : Insérer des données dans une table.
+    SELECT : Récupérer des données depuis une table.
+    UPDATE : Mettre à jour des données dans une table.
+    DELETE FROM : Supprimer des données d'une table.
+
+Commandes de gestion des utilisateurs (DDL) :
+
+    CREATE USER : Créer un nouvel utilisateur.
+    DROP USER : Supprimer un utilisateur.
+    GRANT : Accorder des privilèges à un utilisateur.
+    REVOKE : Révoquer des privilèges d'un utilisateur.
+
+Commandes de gestion des privilèges (DDL) :
+
+    GRANT : Accorder des privilèges à un utilisateur ou un rôle.
+    REVOKE : Révoquer des privilèges d'un utilisateur ou un rôle.
+
+Commandes de gestion des transactions :
+
+    START TRANSACTION : Démarre une transaction.
+    COMMIT : Valider une transaction.
+    ROLLBACK : Annuler une transaction.
+
+Commandes de gestion des schémas (DDL) :
+
+    CREATE SCHEMA : Créer un nouveau schéma.
+    DROP SCHEMA : Supprimer un schéma.
+
+Autres commandes :
+
+    SHOW DATABASES : Afficher la liste des bases de données.
+    SHOW TABLES : Afficher la liste des tables dans une base de données.
+    DESCRIBE ou DESC : Afficher la structure d'une table.
+    USE : Sélectionner une base de données à utiliser.
+    TRUNCATE TABLE : Supprimer toutes les lignes d'une table.

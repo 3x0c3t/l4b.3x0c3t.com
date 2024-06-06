@@ -1,0 +1,61 @@
+/* Styles de base */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #232323;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 20px;
+    background-color: #007f00;
+    text-align: center;
+    padding-top: 10px;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #8d4343;
+    background-color: #2c2c2c;
+}
+
+th {
+    background-color: #007f00;
+}
+
+/* Stylisation pour les appareils mobiles */
+@media only screen and (max-width: 600px) {
+    header {
+        padding-top: 5px;
+        height: 15px;
+    }
+
+    th, td {
+        padding: 6px 8px;
+    }
+
+    body {
+        overflow-x: hidden; /* ou overflow-x: auto; */
+    }
+
+    table {
+        max-width: 100%; /* ou une valeur appropriée */
+        table-layout: fixed;
+    }
+
+    th, td {
+        max-width: none;
+    }
+}
