@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+    <head>
+        <title>Fluent Reader Export</title>
+    </head>
+    <body>
+        <outline text="Sans catégorie" name="Sans catégorie">
+            <outline text="Blog IT Nicolas Hug" name="Blog IT Nicolas Hug" type="rss" xmlUrl="https://www.nicolashug.dev/index.xml"/>
+            <outline text="Blog technique de Decitre" name="Blog technique de Decitre" type="rss" xmlUrl="https://tech.decitre.fr/feed.xml"/>
+            <outline text="Cloudy Minds" name="Cloudy Minds" type="rss" xmlUrl="https://zoph.me/index.xml"/>
+            <outline text="Blog FR" name="Blog FR" type="rss" xmlUrl="https://www.padok.fr/blog/rss.xml"/>
+            <outline text="Deepki Techblog" name="Deepki Techblog" type="rss" xmlUrl="https://techblog.deepki.com/feed.xml"/>
+            <outline text="Alan - Medium" name="Alan - Medium" type="rss" xmlUrl="https://medium.com/feed/alan"/>
+            <outline text="(mcorbin.fr)" name="(mcorbin.fr)" type="rss" xmlUrl="https://mcorbin.fr/feed.xml"/>
+            <outline text="Aurélie Vache" name="Aurélie Vache" type="rss" xmlUrl="https://dev.to/feed/aurelievache"/>
+            <outline text="Cheerz Engineering - Medium" name="Cheerz Engineering - Medium" type="rss" xmlUrl="https://medium.com/feed/cheerz-engineering"/>
+            <outline text="Qonto ∙ Blog - Medium" name="Qonto ∙ Blog - Medium" type="rss" xmlUrl="https://medium.com/feed/qonto-way"/>
+            <!-- Autres flux RSS ici -->
+        </outline>
+    </body>
+</opml>

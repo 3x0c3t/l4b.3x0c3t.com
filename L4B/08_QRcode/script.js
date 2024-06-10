@@ -1,11 +1,9 @@
-document.getElementById('generateBtn').addEventListener('click', function() {
-    var text = document.getElementById('text').value;
-    if (text.trim() === "") {
-        alert("Please enter text to generate QR code");
-        return;
-    }
+var qrcode = new QRCode(document.getElementById("qrcode"), "");
 
-    var qrcodeContainer = document.getElementById('qrcode');
-    qrcodeContainer.innerHTML = ""; // Clear previous QR code if any
-    new QRCode(qrcodeContainer, text);
+document.getElementById('text').addEventListener('input', function() {
+    var text = this.value;
+    qrcode.clear(); // Clear the previous QR code
+    if (text.trim() !== "") {
+        qrcode.makeCode(text); // Generate the new QR code
+    }
 });
