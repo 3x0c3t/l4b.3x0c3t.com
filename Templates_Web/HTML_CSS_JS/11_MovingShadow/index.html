@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template avec Header, Body et Footer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mon Site</h1>
+        <nav>
+            <ul>
+                <li><a href="https://l4b.3x0c3t.com/html_links_generator.html">Lien vers le générateur de liens HTML</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="body-content">
+        <h2>Box Shadow ajustable</h2>
+        <div id="box" class="box"></div>
+        <div id="controls">
+            <label for="distance">Distance:</label>
+            <input type="range" id="distance" name="distance" min="0" max="100" value="50">
+
+            <label for="blur">Flou:</label>
+            <input type="range" id="blur" name="blur" min="0" max="20" value="5">
+
+            <label for="spread">Étalement:</label>
+            <input type="range" id="spread" name="spread" min="0" max="20" value="5">
+
+            <label for="color">Couleur:</label>
+            <input type="color" id="color" name="color" value="#000000">
+        </div>
+    </div>
+
+    <footer>
+        <p>Credits...</p>
+    </footer>
+
+    <div id="code-output">
+        <h2>Code HTML & CSS</h2>
+        <pre id="html-code"></pre>
+        <pre id="css-code"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

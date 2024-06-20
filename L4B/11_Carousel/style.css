@@ -1,0 +1,130 @@
+/* style.css */
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    max-width: 1000px;
+    position: relative;
+    background: linear-gradient(90deg, rgb(53, 53, 53) 0%, rgba(134,134,134,1) 50%, rgba(53, 53, 53,1) 100%);
+    border-radius: 15px;
+    font-family: system-ui;
+    text-align: center; /* Centrage du texte à l'intérieur */
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 255, .2);
+    padding: 5px;
+}
+
+.carousel {
+    overflow: hidden;
+    margin: 0 auto; /* Centrage du carousel lui-même */
+}
+
+.carousel-button {
+    background: radial-gradient(circle, rgba(233,233,233,1) 0%, rgba(134,134,134,1) 50%, rgba(233,233,233,1) 100%);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    color: #000000;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    border: 1px solid #000000;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 1);
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-button.left {
+    left: -20px;
+}
+
+.carousel-button.right {
+    right: -20px;
+}
+
+.carousel-button:hover {
+    background: radial-gradient(circle, rgb(20, 86, 139) 0%, rgba(20, 86, 139,1) 50%, rgba(20, 86, 139,1) 100%);
+    border: 1px solid #FFFFFF;
+    color: #ffffff;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-card {
+    flex: 0 0 100%; /* Pleine largeur par défaut */
+    max-width: 100%; /* Pleine largeur par défaut */
+    height: auto;
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: #f4f4f4;
+    border: 1px solid #000000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Aligner les items en haut */
+    border-radius: 15px;
+    margin: 5px; /* Réduire l'espace entre les divs */
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 255, .2);
+}
+
+.carousel-card img {
+    margin: 5px;
+    width: 100%; /* Largeur fixe */
+    height: 150px; /* Hauteur fixe */
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 1);
+}
+
+.carousel-card h2 {
+    font-size: 18px;
+    margin: 5px 0; /* Réduire la marge entre l'image et le titre */
+}
+
+.carousel-card p {
+    font-size: 14px;
+    margin: 5px 0; /* Réduire la marge entre le titre et le texte */
+    padding: 5px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .carousel-track .carousel-card {
+        flex: 0 0 50%; /* Deux cartes par ligne */
+        max-width: 50%; /* Deux cartes par ligne */
+    }
+
+    .carousel-card h2 {
+        font-size: 16px; /* Ajuster la taille de la police */
+    }
+
+    .carousel-card p {
+        font-size: 12px; /* Ajuster la taille de la police */
+    }
+}
+
+/* Tablettes et plus grands */
+@media (min-width: 600px) {
+    .carousel-track .carousel-card {
+        flex: 0 0 50%; /* Deux cartes par ligne */
+        max-width: 50%; /* Deux cartes par ligne */
+    }
+}
+
+/* Desktops */
+@media (min-width: 1000px) {
+    .carousel-track .carousel-card {
+        flex: 0 0 31%; /* Trois cartes par ligne */
+        max-width: 31%; /* Trois cartes par ligne */
+    }
+}

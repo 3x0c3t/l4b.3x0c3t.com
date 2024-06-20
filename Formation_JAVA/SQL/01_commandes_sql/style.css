@@ -1,0 +1,52 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.Sub-header {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+.category {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: aqua;
+}
+
+.command-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+/* Ajouter un curseur pointer au survol des commandes */
+.command-container:hover {
+    cursor: pointer;
+}
+
+.sub-block1 {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.sub-block {
+    margin-top: 5px;
+}

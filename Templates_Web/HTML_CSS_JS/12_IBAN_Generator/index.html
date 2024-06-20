@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de RIB IBAN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur de RIB IBAN</h1>
+        <form id="ribIbanForm">
+            <label for="country">Choisissez le pays:</label>
+            <select id="country" name="country">
+                <option value="FR">France</option>
+                <option value="DE">Allemagne</option>
+                <option value="ES">Espagne</option>
+                <!-- Ajouter d'autres pays selon les besoins -->
+            </select>
+            <button type="button" onclick="generateRIBIBAN()">Générer</button>
+        </form>
+        <div id="result">
+            <h2>Résultat</h2>
+            <p id="rib">RIB: </p>
+            <button class="copy-btn" onclick="copyToClipboard('rib')">Copier RIB</button>
+            <p id="iban">IBAN: </p>
+            <button class="copy-btn" onclick="copyToClipboard('iban')">Copier IBAN</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

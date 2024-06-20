@@ -3,7 +3,9 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 20px;
-    background: linear-gradient(180deg, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 50%, rgba(9,9,121,1) 100%);
+
+
+    
 }
 
 .container {
@@ -105,3 +107,28 @@ a:hover {
     }
 }
 
+
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Pour placer en arrière-plan */
+    background: radial-gradient(circle, #236876, #000000);
+    background-size: 400% 400%; /* Taille du dégradé initial */
+    animation: gradientMove 15s linear infinite; /* Animation de déplacement */
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%; /* Départ du dégradé */
+    }
+    50% {
+        background-position: 100% 100%; /* Fin du dégradé */
+    }
+    100% {
+        background-position: 0% 0%; /* Retour au départ */
+    }
+}

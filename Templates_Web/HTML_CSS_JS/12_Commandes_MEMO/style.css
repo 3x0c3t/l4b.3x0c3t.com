@@ -1,0 +1,101 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E6E6FA; /* Fond chatoyant */
+    background: radial-gradient(circle, rgba(228,228,228,1) 50%, rgba(45,45,45,1) 100%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Hauteur minimum de la fenêtre visible */
+}
+
+header, .Sub-header {
+    display: flex; /* Afficher les éléments en ligne */
+    background: radial-gradient(circle, rgba(228,228,228,1) 50%, rgba(45,45,45,1) 100%);
+    align-items: center; /* Centrer les éléments verticalement */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    padding: 10px; /* Espacement interne */
+    text-align: center; /* Centrage du lien */
+    margin:10px;
+    border-radius:15px;
+}
+
+.Sub-header {
+    flex-wrap: wrap; /* Pour que les sous-blocs passent à la ligne si l'espace est insuffisant */
+    flex: 0 0 calc(30% - 20px); /* 30% de la largeur du conteneur moins la marge */
+    background-color: #494949;
+    color: #414141;
+    margin: 5px;
+    border-radius: 15px;
+    height: 30px;
+    display: flex; /* Utilisation de flexbox */
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    text-align: center; /* Centrage du texte horizontalement */
+}
+
+#main-container {
+    display: flex; /* Afficher les éléments en ligne */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    align-items: center; /* Centrer les éléments verticalement */
+    flex-grow: 1; /* Permet au conteneur de grandir pour remplir l'espace */
+    margin:10px;
+}
+
+.container {
+    background-color: #FFFACD; /* Fond chatoyant pour le conteneur */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    display: flex; /* Afficher les sous-blocs en ligne */
+    flex-wrap: wrap; /* Pour que les sous-blocs passent à la ligne si l'espace est insuffisant */
+    justify-content: space-between; /* Pour les espacer équitablement */
+}
+
+.category {
+    background-color: #613f32; /* Couleur chatoyante pour la catégorie */
+    color:#E6E6FA;
+    padding: 10px; /* Espacement interne */
+    margin-bottom: 10px; /* Marge en bas pour séparer les éléments */
+    width: 100%; /* Pour occuper toute la largeur du conteneur */
+    border-radius:15px;
+}
+
+.sub-block, .sub-block1 {
+    flex: 0 0 calc(30% - 20px); /* 30% de la largeur du conteneur moins la marge */
+    height: 100px; /* Hauteur arbitraire */
+    margin: 10px; /* Marge autour des sous-blocs */
+    padding: 5px;
+    display: flex; /* Utilisation de flexbox pour centrer le texte */
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    text-align: center; /* Centrage du texte horizontalement */
+    box-shadow: 0px 5px 8px #808080;
+    border-radius:15px;
+}
+
+.sub-block {
+    background-color: #cbebf8; /* Couleur chatoyante pour les sous-blocs */
+}
+
+.sub-block1 {
+    background-color: #6197ac; /* Couleur chatoyante pour les sous-blocs */
+}
+
+footer {
+    background: radial-gradient(circle, rgba(228,228,228,1) 50%, rgba(45,45,45,1) 100%);
+    padding: 10px; /* Espacement interne */
+    text-align: center; /* Centrage du contenu */
+    margin-top: auto; /* Colle le footer en bas de la page */
+    border-radius:15px;
+}
+
+/* Style global des liens */
+a {
+    text-decoration: none; /* Supprimer le soulignage par défaut */
+    color: #007bff; /* Couleur par défaut des liens */
+}
+
+/* Style des liens au survol */
+a:hover {
+    color: #DD7bff; /* Couleur par défaut des liens */
+}

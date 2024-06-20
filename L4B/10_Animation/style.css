@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #cccccc, #666666);
+    overflow: hidden;
+}
+
+.center {
+    position: relative;
+    width: 50vmin; /* Largeur de la zone de rotation, relative à la plus petite dimension de l'écran */
+    height: 50vmin; /* Hauteur de la zone de rotation, relative à la plus petite dimension de l'écran */
+}
+
+.ball {
+    position: absolute;
+    width: 10vmin; /* Taille des boules, relative à la plus petite dimension de l'écran */
+    height: 10vmin; /* Taille des boules, relative à la plus petite dimension de l'écran */
+    border-radius: 50%;
+}
+
+.blue-ball {
+    background-color: blue;
+}
+
+.green-ball {
+    background-color: green;
+}
+
+/* Media Queries pour les écrans plus larges */
+@media (min-width: 600px) {
+    .center {
+        width: 25vmin;
+        height: 25vmin;
+    }
+
+    .ball {
+        width: 5vmin;
+        height: 5vmin;
+    }
+}
