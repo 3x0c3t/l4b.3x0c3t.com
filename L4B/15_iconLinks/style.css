@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle, #666666, #333333); /* Dégradé radial gris moyen à sombre */
+    color: #ffffff; /* Couleur du texte */
+    font-family: Arial, sans-serif;
+}
+
+.logo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Largeur maximale de la grille */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center; /* Centre les éléments dans la grille */
+}
+
+.logo-container a {
+    display: flex; /* Utilisation de flexbox pour centrage vertical */
+    flex-direction: column; /* Empile le contenu verticalement */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    position: relative;
+    overflow: hidden; /* Pour clipper les coins arrondis */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre légère autour des icônes */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation de transition */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    background-color: #7e7e7e; /* Fond gris clair pour chaque lien */
+}
+
+.logo-container a:hover {
+    transform: scale(1.05); /* Zoom sur l'image au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée au survol */
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle; /* Aligne verticalement l'image */
+    border-radius: 15px; /* Coins arrondis pour l'image */
+}
+
+.logo-container span {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+    color: #ffffff; /* Couleur du texte */
+    padding: 0px 0px; /* Réduit la taille du texte */
+    font-size: 15px; /* Taille de police réduite */
+    border-radius: 0 0 15px 15px; /* Coins arrondis uniquement en bas */
+    text-align: center; /* Centre le texte horizontalement */
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0; /* Rend le texte invisible par défaut */
+    transition: opacity 0.3s ease;
+    transform: translateY(100%); /* Cache le texte en le déplaçant vers le bas */
+}
+
+.logo-container a:hover span {
+    opacity: 1; /* Affiche le texte au survol */
+    transform: translateY(-00%); /* Affiche le texte en le remontant légèrement */
+}

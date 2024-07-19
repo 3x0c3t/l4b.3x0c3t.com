@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: spring02_bis.Spring02BisApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.542 s - in spring02_bis.Spring02BisApplicationTests
