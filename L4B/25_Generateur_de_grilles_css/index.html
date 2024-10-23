@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de grille CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="titrePage">
+        Générateur de grilles CSS
+    </div>
+    <div class="container">
+        <div class="controls">
+            <label for="rows">Nombre de lignes :</label>
+            <input type="number" id="rows" min="1" value="3"><br><br>
+            <label for="columns">Nombre de colonnes :</label>
+            <input type="number" id="columns" min="1" value="3">
+        </div>
+        <div class="preview">
+            <h2>Aperçu :</h2>
+            <div id="gridPreview" class="grid"></div>
+        </div>
+        <div class="code">
+            <h2>Code HTML / CSS :</h2>
+            <pre id="code"></pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Style des blocs */
+.left-block, .center-block, .right-block {
+    width: 30%;
+    padding: 10px;
+}
+
+.left-block button {
+    width: 50%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Boutons personnalisés */
+
+/* Bouton 1 : Agrandissement au survol */
+.btn-hover-1 {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+}
+.btn-hover-1:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Bouton 2 : Changement de bordure et de couleur au survol */
+.btn-hover-2 {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+.btn-hover-2:hover {
+    border-color: #fff;
+    color: #28a745;
+    background-color: white;
+}
+
+/* Bouton 3 : Dégradé et ombre portée au survol */
+.btn-hover-3 {
+    background: linear-gradient(45deg, #ff0066, #ffcc00);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    transition: box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+.btn-hover-3:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Bouton 4 : Modification du style de bordure au survol */
+.btn-hover-4 {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px dashed #fff;
+    transition: all 0.3s ease;
+}
+.btn-hover-4:hover {
+    border-style: solid;
+    background-color: #ff3300;
+}
+
+/* Bouton 5 : Changement du fond et du texte au survol */
+.btn-hover-5 {
+    background-color: transparent;
+    color: #000;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-hover-5:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Bouton 6 : Rotation au survol */
+.btn-hover-6 {
+    background-color: #6f42c1;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: transform 0.3s ease;
+}
+.btn-hover-6:hover {
+    transform: rotate(10deg);
+}
+
+/* Bouton 7 : Changement de couleur et de bordure au survol */
+.btn-hover-7 {
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+.btn-hover-7:hover {
+    background-color: #138496;
+    border-radius: 0;
+}
+
+/* Bouton 8 : Transformation du texte au survol */
+.btn-hover-8 {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-hover-8:hover {
+    color: #f8f9fa;
+    background-color: #212529;
+    text-transform: uppercase;
+}
+
+/* Bouton 9 : Changement d'opacité au survol */
+.btn-hover-9 {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
+}
+.btn-hover-9:hover {
+    opacity: 0.7;
+    transition: transform 0.3s ;
+}
+
+/* Bouton 10 : Agrandissement circulaire au survol */
+.btn-hover-10 {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+.btn-hover-10:hover {
+    transform: scale(1.2);
+}
+
+
+/* Responsive */
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-block, .center-block, .right-block {
+        width: 100%;
+    }
+}

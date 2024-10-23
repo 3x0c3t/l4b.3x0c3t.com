@@ -20,16 +20,22 @@
         </nav>
     </header>
 
-
     <div class="container">
-        <h2>-3xØc3t-</h2>
-        <h1>QR Code Generator</h1>
+        <div class="title">
+            <h1>-QR Code Generator-</h1>
+            <h3>v1.3.1 - 20240722</h3>
+            <h2>-3xØc3t-</h2>
+        </div>
+        <input type="text" id="text" placeholder="Entrer votre TEXTE pour générer le QR code"><br>
+        
+        <!-- Grouping the color labels and inputs -->
+        <div class="color-options">
+            <label for="colorDark">QR COLOR:</label>
+            <input type="color" id="colorDark" value="#000000">
+            <label for="colorLight">BACKGROUND COLOR:</label>
+            <input type="color" id="colorLight" value="#ffffff">
+        </div>
 
-        <input type="text" id="text" placeholder="Enter text to generate QR code"><br>
-        <label for="colorDark">QR CODE COLOR:</label><br>
-        <input type="color" id="colorDark" value="#000000"><br>
-        <label for="colorLight">BACKGROUND COLOR:</label>
-        <input type="color" id="colorLight" value="#ffffff"><br>
         <label for="transparentBackground">Transparent Background:</label>
         <input type="checkbox" id="transparentBackground"><br>
         <label for="dotStyle">Dot Style:</label>
@@ -41,8 +47,11 @@
             <option value="square">Square</option>
             <option value="extra-rounded">Extra Rounded</option>
         </select><br>
+        <label for="logo">Logo (URL):</label>
+        <input type="text" id="logo" placeholder="URL de votre logo"><br>
         <div id="qrcode"></div>
         <button id="downloadBtn" style="display:none;">Download QR Code</button>
+
     </div>
     <script src="libs/qr-code-styling.min.js"></script>
     <script src="script.js"></script>

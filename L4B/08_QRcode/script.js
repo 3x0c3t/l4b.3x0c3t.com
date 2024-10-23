@@ -11,6 +11,11 @@ var qrCode = new QRCodeStyling({
     backgroundOptions: {
         color: "#ffffff" // Valeur par défaut pour le fond
     },
+    imageOptions: {
+        crossOrigin: "anonymous",
+        margin: 20, // Ajustez la marge autour de l'image si nécessaire
+        imageSize: 0.4 // Taille de l'image en fonction du QR code (40% de la taille totale)
+    },
     qrOptions: {
         errorCorrectionLevel: "H"
     }
@@ -26,6 +31,7 @@ function updateQRCode() {
     var colorLight = document.getElementById('colorLight').value;
     var dotStyle = document.getElementById('dotStyle').value;
     var transparentBackground = document.getElementById('transparentBackground').checked;
+    var logoUrl = document.getElementById('logo').value;
 
     qrCode.update({
         data: text,
@@ -35,6 +41,12 @@ function updateQRCode() {
         },
         backgroundOptions: {
             color: transparentBackground ? "transparent" : colorLight
+        },
+        image: logoUrl,
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 20,
+            imageSize: 0.4 // Ajustez cette valeur pour changer la taille de l'image
         }
     });
 
@@ -45,14 +57,13 @@ function updateQRCode() {
     }
 }
 
-// Ajouter un écouteur d'événement pour l'entrée de texte
-document.getElementById('text').addEventListener('input', updateQRCode);
-
 // Ajouter des écouteurs d'événements pour les options de personnalisation
+document.getElementById('text').addEventListener('input', updateQRCode);
 document.getElementById('colorDark').addEventListener('input', updateQRCode);
 document.getElementById('colorLight').addEventListener('input', updateQRCode);
 document.getElementById('dotStyle').addEventListener('change', updateQRCode);
 document.getElementById('transparentBackground').addEventListener('change', updateQRCode);
+document.getElementById('logo').addEventListener('input', updateQRCode);
 
 // Ajouter un écouteur d'événement pour le bouton de téléchargement
 document.getElementById('downloadBtn').addEventListener('click', function() {

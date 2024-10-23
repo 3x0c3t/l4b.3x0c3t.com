@@ -1,0 +1,114 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Styles des blocs */
+.block {
+    width: 30%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+#test-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.code-block {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    white-space: pre-wrap;
+}
+
+/* Bloc de droite : organisation */
+.block.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ajout pour les menus déroulants */
+.block.left label,
+.block.left select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.block.left select {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Styles pour le bloc centre */
+.block.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    justify-content: center; /* Centrer verticalement */
+}
+
+/* Centrer le titre et le bouton */
+.block.center h2 {
+    margin: 0; /* Supprimer la marge par défaut */
+    text-align: center; /* Centrer le texte du titre */
+}
+
+.block.center #test-button {
+    margin-top: 20px; /* Ajouter un peu d'espace au-dessus du bouton */
+}
+
+/* Distinction de la section Hover */
+.hover-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.hover-section h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Media queries pour rendre le design responsive */
+@media (max-width: 768px) {
+    .block {
+        width: 90%; /* Réduire la largeur des blocs pour mobile */
+        margin: 10px auto; /* Centrer les blocs */
+    }
+}

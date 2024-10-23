@@ -1,0 +1,114 @@
+/* Définition des styles de base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles pour le header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00796b;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1000;
+    box-sizing: border-box; /* Inclut le padding dans la hauteur totale */
+}
+
+/* Styles pour le main */
+main {
+    flex: 1;
+    padding: 60px 20px 40px 20px; /* Ajuste le padding pour éviter le chevauchement avec le header et footer */
+    text-align: center;
+}
+
+/* Styles pour le footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00796b;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box; /* Inclut le padding dans la hauteur totale */
+}
+
+/* Boutons */
+button {
+    padding: 15px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 15px;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+/* Dégradés spécifiques pour chaque bouton */
+#button1 {
+    background: radial-gradient(circle, rgba(218,248,250,1) 0%, rgba(0,122,107,1) 100%);
+}
+
+#button2 {
+    background: radial-gradient(circle, rgba(184,184,184,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+#button3 {
+    background: radial-gradient(circle, rgba(255,149,0,1) 0%, rgba(255,255,0,1) 100%);
+}
+
+/* Styles pour le mode vert */
+body.green-mode {
+    background-color: #e0f7fa;
+    color: #000000;
+}
+
+header.green-mode, footer.green-mode {
+    background: radial-gradient(circle, rgba(218,248,250,1) 0%, rgba(0,122,107,1) 100%);
+    color: #000000;
+}
+
+/* Styles pour le mode sombre */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+header.dark-mode, footer.dark-mode {
+    background: radial-gradient(circle, rgba(111,111,111,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+/* Styles pour le mode Contraste Élevé */
+body.high-contrast-mode {
+    background-color: #ffff00;
+    color: #000000;
+    font-size: 18px;
+}
+
+header.high-contrast-mode, footer.high-contrast-mode {
+    background: radial-gradient(circle, rgba(255,255,0,1) 0%, rgba(255,149,0,1) 100%);
+    color:#000000;
+}
+
+/* Styles de survol pour les boutons */
+button:hover {
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.8);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Application du style du bouton cliqué à l'ensemble de la page */
+button.active {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}

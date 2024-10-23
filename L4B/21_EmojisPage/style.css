@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+section {
+    margin: 20px 0;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#emoji-container {
+    padding: 0 20px;
+}
+
+.category-emojis {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux emojis de passer à la ligne si nécessaire */
+    gap: 10px; /* Espacement entre les emojis */
+    justify-content: center; /* Centre les emojis horizontalement */
+}
+
+.emoji-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80px; /* Largeur fixe pour les emojis */
+    text-align: center;
+}
+
+.emoji {
+    font-size: 2rem; /* Taille des emojis */
+    margin-bottom: 5px;
+}
+
+.emoji-keyword {
+    font-size: 0.9rem;
+    color: #555;
+}

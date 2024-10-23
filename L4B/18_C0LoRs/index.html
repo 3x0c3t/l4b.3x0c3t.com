@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Palettes de Couleurs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://l4b.3x0c3t.com/html_links_generator.html">Accueil</a></li>
+                <li><a href="https://l4b.3x0c3t.com/L4B/07_CV/index.html">CV</a></li>
+                <li><a href="https://www.linkedin.com/in/julien-calonne-548a33177/">Linkedin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="title">
+            <h1>-Générateur de Palettes de Couleurs-</h1>
+            <h2>v1.0.2 - 20240726</h2>
+            <h3>-3xØc3t-</h3>
+        </div>
+        
+        <h4>
+            Sélectionner une couleur :
+        </h4>
+
+        <div class="color-picker-container">
+            <input type="color" id="colorPicker" value="#3498db">
+        </div>
+        
+        <div id="selectedColor" class="color-box">
+            <div class="hex-value">#3498db</div>
+        </div>
+
+        <section>
+            <h2 class="info-title">Couleurs Complémentaires
+                <button class="info-button" aria-label="Afficher la définition">?</button>
+            </h2>
+            <div class="info-bubble">
+                <p>Les couleurs complémentaires sont celles qui se trouvent en face l'une de l'autre sur le cercle chromatique. Elles créent un contraste élevé et attirent l'œil.</p>
+            </div>
+            <div id="complementaryColors" class="palette complementary-color"></div>
+        </section>
+
+        <section>
+            <h2 class="info-title">Couleurs Analogues
+                <button class="info-button" aria-label="Afficher la définition">?</button>
+            </h2>
+            <div class="info-bubble">
+                <p>Les couleurs analogues sont situées côte à côte sur le cercle chromatique. Elles sont harmonieuses et créent des transitions douces.</p>
+            </div>
+            <div id="analogousColors" class="palette analogous-color"></div>
+        </section>
+
+        <section>
+            <h2 class="info-title">Couleurs Triadiques
+                <button class="info-button" aria-label="Afficher la définition">?</button>
+            </h2>
+            <div class="info-bubble">
+                <p>Les couleurs triadiques sont réparties uniformément autour du cercle chromatique. Elles offrent un contraste équilibré et sont souvent utilisées pour créer des palettes dynamiques.</p>
+            </div>
+            <div id="triadicColors" class="palette triadic-color"></div>
+        </section>
+
+        <section>
+            <h2 class="info-title">Couleurs Tétradiques
+                <button class="info-button" aria-label="Afficher la définition">?</button>
+            </h2>
+            <div class="info-bubble">
+                <p>Les couleurs tétradiques sont constituées de deux paires de couleurs complémentaires. Elles fournissent une palette riche avec de nombreux contrastes et nuances.</p>
+            </div>
+            <div id="tetradicColors" class="palette tetradic-color"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

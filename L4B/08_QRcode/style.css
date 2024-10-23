@@ -11,12 +11,12 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #007bff;
+    background: linear-gradient(90deg, rgba(21,52,68,1) 0%, rgba(49,125,163,1) 50%, rgba(21,52,68,1) 100%);
     color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000; /* Assure que le header est au-dessus des autres éléments */
     text-align: center;
-    padding: 10px 0; /* Ajout de padding pour améliorer la présentation */
+    padding: 5px 0; /* Ajout de padding pour améliorer la présentation */
 }
 
 nav ul {
@@ -33,30 +33,53 @@ nav ul li {
 
 nav ul li a {
     display: block;
-    padding: 10px 20px;
+    padding: 5px 5px;
     color: white;
     text-decoration: none;
     text-align: center;
 }
 
 nav ul li a:hover {
-    background-color: #0056b3;
+    background: linear-gradient(45deg, rgba(21,52,68,1) 42%, rgba(49,125,163,1) 100%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #FFFFFF;
 }
 
 /* Ajuste le conteneur principal pour éviter le chevauchement avec le header fixe */
 .container {
-    margin-top: 80px; /* Ajustez selon la hauteur de votre header */
-    margin-bottom: 80px;
+    margin: 10px;
     text-align: center;
     background: white;
-    padding: 20px;
     border-radius: 15px;
     border: 1px solid #6d6d6d;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    padding: 0; /* Enlevez tout padding pour s'assurer que le titre est collé au haut */
+    margin-top: 60px; /* Assurez-vous qu'il y a assez d'espace en haut pour éviter le chevauchement avec le header */
 }
 
-h2{
-    color:#0056b3;
+.title {
+    margin: 0; /* Assurez-vous qu'il n'y a pas de marge */
+    padding: 5px; /* Ajoutez du padding pour le contenu interne */
+    background-color: #007bff;
+    border-radius: 15px 15px 0 0; /* Arrondir les coins du haut */
+}
+
+h1 {
+    color: #000000;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+    font-size: 1rem; /* Taille de police pour mobile */
+}
+
+h2 {
+    color: #b9b9b9;
+    padding-top: 0px;
+    font-size: 0.8rem; /* Taille de police pour mobile */
+}
+
+h3 {
+    color: #00ccff;
+    padding-top: 0px;
+    font-size: 0.8rem; /* Taille de police pour mobile */
 }
 
 /* Styles de base (mobile-first) */
@@ -66,19 +89,40 @@ body {
     align-items: center;
     height: 100vh;
     background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(49,125,163,1) 100%);
+    margin: 10px;
 }
 
-h1 {
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    font-size: 1.5rem; /* Taille de police pour mobile */
-}
-
+/* Style par défaut pour les champs de saisie */
 input {
     padding: 10px;
-    width: 90%; /* Largeur adaptée aux petits écrans */
-    margin-bottom: 10px;
+    width: 85%;
+    margin: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Ajout de transition pour un effet de lissage */
+}
+
+/* Style lorsque le champ de saisie est en focus */
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none; /* Enlevez l'outline par défaut */
+}
+
+/* Style lorsque le champ de saisie est en focus et survolé */
+input:hover:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.7);
+}
+
+/* Color options styles */
+.color-options {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre verticalement les éléments */
+    gap: 10px; /* Espace entre les éléments */
+    flex-wrap: none; /* Permet le retour à la ligne si nécessaire */
+    margin: 5px;
 }
 
 #qrcode {
@@ -94,7 +138,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 10px;
+    margin: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -116,7 +160,7 @@ button:hover {
     }
 
     h1 {
-        font-size: 2rem; /* Taille de police pour écrans plus grands */
+        font-size: 1rem; /* Taille de police pour écrans plus grands */
     }
 
     input {
@@ -130,6 +174,6 @@ button:hover {
     }
 
     h1 {
-        font-size: 2.5rem; /* Taille de police pour les très grands écrans */
+        font-size: 1rem; /* Taille de police pour les très grands écrans */
     }
 }

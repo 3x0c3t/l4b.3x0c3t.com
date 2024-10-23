@@ -42,8 +42,8 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%; /* Largeur maximale du conteneur du CV */
-    height: 80%; /* Hauteur maximale du conteneur du CV */
+    width: 95%; /* Largeur initiale du conteneur du CV */
+    height: 95%; /* Hauteur initiale du conteneur du CV */
     padding: 30px; /* Espacement interne */
     background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond semi-transparente */
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Ombre légère */
@@ -51,7 +51,6 @@ body, html {
     z-index: 2; /* Au-dessus de l'animation */
     animation: expandCV 1s ease forwards; /* Animation pour faire agrandir */
     opacity: 0.2; /* Initialement invisible */
-
     scrollbar-width: thin; /* Réduit la largeur de l'ascenseur */
     scrollbar-color: #317da3 rgba(0, 0, 0, 0.1); /* Couleurs de l'ascenseur */
 }
@@ -64,8 +63,8 @@ body, html {
         opacity: 0;
     }
     100% {
-        width: 80%; /* Largeur finale du conteneur du CV */
-        height: 80%; /* Hauteur finale du conteneur du CV */
+        width: 90%; /* Largeur finale du conteneur du CV */
+        height: 90%; /* Hauteur finale du conteneur du CV */
         opacity: 1;
     }
 }
@@ -108,7 +107,7 @@ body, html {
 .cv-content h5 {
     font-size: 1.2rem;
     font-weight: bold;
-    text-align: left; /* Centrage horizontal du texte */
+    text-align: left; /* Alignement du texte */
 }
 
 .cv-content p {
@@ -142,7 +141,7 @@ body, html {
 }
 
 .externalLinks {
-    background-color: #acacac;
+    background: linear-gradient(90deg, rgba(102,102,102,1) 0%, rgba(185,185,185,1) 50%, rgba(102,102,102,1) 100%);
     padding: 0 0 10px 0; /* haut, droite, bas, gauche */
     border-radius: 10px;
     margin-bottom: 20px;
@@ -166,7 +165,7 @@ body, html {
     color: #ffffff;
     padding: 2px 2px 2px 10px; /*haut, droite, bas, gauche*/
     border-radius: 10px;
-    text-align: left; /* Centrage horizontal du texte */
+    text-align: left; /* Alignement du texte */
 }
 
 .OrganisationContainer {
@@ -190,10 +189,15 @@ body, html {
     color: #000000; /* Couleur du texte */
     font-weight: bold; /* Texte en gras */
     transition: transform 0.3s ease; /* Transition pour l'effet de survol */
+    padding: 10px;
+    margin: 5px;
 }
 
 .LogoContainer a:hover {
     transform: scale(1.1); /* Agrandit légèrement au survol */
+    box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    background-color: #007bff;
 }
 
 .LogoContainer img {
@@ -227,22 +231,64 @@ body, html {
     text-align: center; /* Centrage horizontal du texte */
 }
 
-/* Classe pour réduire la taille du QR Code */
+/* Styles pour le bouton de téléchargement */
+.download-section {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement si nécessaire */
+    margin-top: 20px; /* Espacement au-dessus du bouton */
+}
+
+.download-section button {
+    padding: 10px 10px; /* Espace interne du bouton */
+    font-size: 1.2rem; /* Taille de la police */
+    border: none; /* Supprime la bordure par défaut */
+    border-radius: 25px; /* Coins arrondis */
+    background: linear-gradient(135deg, #007bff, #00aaff); /* Dégradé de couleur */
+    color: white; /* Couleur du texte du bouton */
+    cursor: pointer; /* Change le curseur au survol */
+    transition: all 0.3s ease; /* Transition fluide pour le changement d'état */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    font-weight: bold; /* Texte en gras */
+    text-transform: uppercase; /* Transforme le texte en majuscules */
+    margin: 10px; /* Assure qu'il n'y a pas de marge supplémentaire */
+}
+
+.download-section button:hover {
+    background: linear-gradient(135deg, #0056b3, #0099ff); /* Dégradé de couleur au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée au survol */
+    transform: translateY(-2px); /* Légère élévation au survol */
+}
+
+.download-section button:active {
+    background: linear-gradient(135deg, #004494, #0080cc); /* Dégradé plus foncé lors du clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre réduite lors du clic */
+    transform: translateY(0); /* Remet le bouton à sa position d'origine lors du clic */
+}
+
+/* Conteneur pour le QR code */
+.qrcode-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement le QR code */
+}
+
+/* Styles pour le QR code */
 .qrcode {
-    width: 100px; /* Largeur du QR Code */
-    height: 100px; /* Hauteur du QR Code */
+    width: 150px; /* Largeur du QR Code */
+    height: 150px; /* Hauteur du QR Code */
+    margin: 10px;
 }
 
 /* Media Query pour la version mobile */
 @media (max-width: 768px) {
     .cv-container {
-        width: 90%; /* Ajustement de la largeur pour les petits écrans */
-        height: 90%; /* Ajustement de la hauteur pour les petits écrans */
-        padding: 10px; /* Espacement interne réduit pour les petits écrans */
+        width: 95%; /* Augmentation de la largeur pour les petits écrans */
+        height: 95%; /* Augmentation de la hauteur pour les petits écrans */
+        padding: 10px; /* Espacement interne légèrement ajusté pour les petits écrans */
     }
 
     .cv-content {
-        font-size: 0.9rem; /* Réduction de la taille de la police pour les petits écrans */
+        font-size: 1rem; /* Réduction de la taille de la police pour les petits écrans, légèrement augmentée par rapport à la valeur précédente */
     }
 
     .personal-info {
@@ -250,8 +296,8 @@ body, html {
     }
 
     .qrcode {
-        width: 80px; /* Réduction de la largeur du QR Code pour les petits écrans */
-        height: 80px; /* Réduction de la hauteur du QR Code pour les petits écrans */
+        width: 100px; /* Réduction de la largeur du QR Code pour les petits écrans */
+        height: 100px; /* Réduction de la hauteur du QR Code pour les petits écrans */
     }
 }
 

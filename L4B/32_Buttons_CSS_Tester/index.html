@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Button Tester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>CSS Button Tester</h1>
+        <nav>
+            <a href="https://l4b.3x0c3t.com/html_links_generator.html">l4b.3x0c3t</a>
+            <a href="https://3x0c3t.com/">3x0c3t.com</a>
+        </nav>
+    </header>
+
+    <!-- BODY -->
+    <div class="container">
+
+        <!-- Bloc Gauche : Menu pour sélectionner les propriétés -->
+        <div class="block left">
+            <h2>Configurer le bouton</h2>
+
+            <!-- Propriétés du bouton -->
+            <label for="background-color">Choisissez la couleur de fond :</label>
+            <input type="color" id="background-color" name="background-color" value="#ff0000" onchange="updateButton()">
+
+            <label for="border-radius">Border Radius :</label>
+            <select id="border-radius" onchange="updateButton()">
+                <option value="0px">0px</option>
+                <option value="10px">10px</option>
+                <option value="20px">20px</option>
+                <option value="50%">50% (cercle)</option>
+            </select>
+
+            <label for="box-shadow">Ombre :</label>
+            <select id="box-shadow" onchange="updateButton()">
+                <option value="none">Aucune</option>
+                <option value="2px 2px 5px gray">Gris clair</option>
+                <option value="4px 4px 10px black">Noir intense</option>
+            </select>
+
+            <!-- Section Effets Hover -->
+            <div class="hover-section">
+                <h3>Effet Hover</h3>
+
+                <label for="hover-color">Choisissez la couleur de hover :</label>
+                <input type="color" id="hover-color" name="hover-color" value="#ff7f7f" onchange="updateHoverEffect()">
+
+                <label for="hover-effect">Effet Hover :</label>
+                <select id="hover-effect" onchange="updateHoverEffect()">
+                    <option value="scale(1)">Aucun</option>
+                    <option value="scale(1.1)">Grossir</option>
+                    <option value="scale(0.9)">Rétrécir</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Bloc Centre : Bouton interactif -->
+        <div class="block center">
+            <h2>Prévisualisation du bouton</h2>
+            <button id="test-button">Mon Bouton</button>
+        </div>
+
+        <!-- Bloc Droit : Code généré -->
+        <div class="block right">
+            <div class="code-block">
+                <h2>HTML</h2>
+                <pre id="html-code">&lt;button&gt;Mon Bouton&lt;/button&gt;</pre>
+            </div>
+            <div class="code-block">
+                <h2>CSS Complet du Bouton</h2>
+                <pre id="full-css-code"></pre> <!-- Affichage du CSS complet -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
