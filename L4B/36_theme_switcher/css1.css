@@ -1,0 +1,113 @@
+/* 36_theme_switcher */
+/* css1.css */
+/* 20241031 - 09:43:24 */
+
+/* === Réinitialisation de base === */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* === Style de base pour le corps === */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === En-tête et navigation === */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Changez à space-between pour éviter le débordement */
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0 10px; /* Ajout de padding pour éviter le débordement */
+}
+
+.header1, .header2, .header3, .header4 {
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+
+.header1 {
+    width: 15%;
+    padding: 5px;
+    background-color: aquamarine;
+}
+
+.header2 {
+    width: 20%;
+    padding: 5px;
+    background-color: rgb(35, 180, 132);
+}
+
+.header3 {
+    padding: 5px;
+    background-color: rgb(83, 233, 14);
+}
+
+.header4 {
+    padding: 5px;
+    background-color: rgb(22, 66, 161);
+    position: relative; /* Nécessaire pour le menu déroulant */
+}
+
+/* === Menu déroulant (caché par défaut) === */
+.theme-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positionner le menu juste en dessous */
+    right: 0; /* Aligner à droite */
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 100;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Afficher le menu lors du survol de l’élément parent */
+.theme-toggle:hover .theme-menu {
+    display: block;
+}
+
+/* === Contenu principal === */
+.container {
+    flex: 1;
+    padding: 20px;
+}
+
+/* === Pied de page === */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer p {
+    flex: 1;
+    margin: 0;
+}
+
+/* === Styles responsive === */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Changez à colonne pour mobile */
+        align-items: center; /* Centre les éléments dans la colonne */
+    }
+
+    .header1, .header2, .header3, .header4 {
+        width: 100%; /* S'assurer que chaque header prend toute la largeur */
+        margin: 5px 0; /* Ajout d'un peu d'espace entre les éléments */
+    }
+}

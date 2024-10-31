@@ -1,0 +1,105 @@
+/* css4.css */
+
+/* === Réinitialisation de base === */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* === Style de base pour le corps === */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* Fond blanc */
+    color: #000000; /* Texte noir */
+}
+
+/* === En-tête et navigation === */
+header {
+    background-color: #000000; /* Fond noir */
+    color: #ffffff; /* Texte blanc */
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0 10px; /* Espacement pour éviter le débordement */
+}
+
+.header1, .header2, .header3, .header4 {
+    width: 15%; /* Largeur fixe pour les sections */
+    padding: 5px; /* Espacement interne */
+    text-align: center;
+}
+
+.header1 {
+    background-color: #ffff00; /* Fond jaune */
+    color: #000; /* Texte noir */
+}
+
+.header2 {
+    background-color: #ff00ff; /* Fond magenta */
+    color: #000; /* Texte noir */
+}
+
+.header3 {
+    background-color: #00ffff; /* Fond cyan */
+    color: #000; /* Texte noir */
+}
+
+.header4 {
+    background-color: #0000ff; /* Fond bleu */
+    color: #ffffff; /* Texte blanc */
+}
+
+/* === Menu déroulant (caché par défaut) === */
+.theme-menu {
+    display: none;
+}
+
+.theme-toggle:hover .theme-menu {
+    display: block; /* Affiche le menu au survol */
+}
+
+.theme-menu {
+    position: absolute;
+    background-color: #000; /* Fond noir pour le menu */
+    color: #ffffff; /* Texte blanc pour le menu */
+    border: 1px solid #ffffff; /* Bordure blanche */
+    z-index: 100;
+    text-align: left;
+    padding: 10px;
+}
+
+/* === Contenu principal === */
+.container {
+    flex: 1;
+    padding: 20px;
+}
+
+/* === Pied de page === */
+footer {
+    background-color: #000000; /* Fond noir */
+    color: #ffffff; /* Texte blanc */
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer p {
+    flex: 1;
+    margin: 0; /* Enlève la marge */
+}
+
+/* === Styles responsive === */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Changement en colonne pour mobile */
+    }
+}
