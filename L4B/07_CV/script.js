@@ -1,5 +1,0 @@
-
-    function printCV() {
-        window.print();
-    }
-
