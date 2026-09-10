@@ -2,472 +2,152 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    >
-
-    <meta
-        name="description"
-        content="3x0c3t L4B - Digital Laboratory"
-    >
-
-    <title>3x0c3t // L4B</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#02070b">
+    <title>L4B // 3x0c3t</title>
     <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
+<div id="app">
 
-    <header class="site-header">
-
+    <header class="topbar">
         <div class="brand">
-            <span class="brand-main">3x0c3t</span>
-            <span class="brand-separator">/</span>
-            <span class="brand-lab">L4B</span>
+            <span class="brand-mark">L4B</span>
+            <span class="brand-sub">// 3x0c3t LABORATORY</span>
         </div>
 
-        <div class="header-status">
-
-            <span class="system-status">
-                <span class="led"></span>
-                SYSTEM ONLINE
-            </span>
-
-            <span class="system-clock" id="system-clock">
-                --:--:--
-            </span>
-
+        <div class="system-status">
+            <span class="status-dot"></span>
+            <span>SYSTEM ONLINE</span>
+            <span id="clock">00:00:00</span>
         </div>
-
-        <nav class="header-nav">
-
-            <a
-                href="https://github.com/3x0c3t/l4b.3x0c3t.com"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                GITHUB
-            </a>
-
-            <a href="html_links_generator.html">
-                INDEX
-            </a>
-
-        </nav>
-
     </header>
 
+    <main class="lab">
 
-    <!-- =====================================================
-         LAB
-         ===================================================== -->
+        <section class="module module-web" data-module="WEB">
+            <div class="module-index">01</div>
+            <div class="module-title">WEB</div>
+            <div class="module-line"></div>
+            <div class="module-status">ACCESS</div>
+        </section>
 
-    <main class="laboratory">
+        <section class="module module-code" data-module="CODE">
+            <div class="module-index">02</div>
+            <div class="module-title">CODE</div>
+            <div class="module-line"></div>
+            <div class="module-status">SOURCE</div>
+        </section>
 
-        <!-- -------------------------------------------------
-             LAB TOP
-             ------------------------------------------------- -->
+        <section class="module module-design" data-module="DESIGN">
+            <div class="module-index">03</div>
+            <div class="module-title">DESIGN</div>
+            <div class="module-line"></div>
+            <div class="module-status">VISUAL</div>
+        </section>
 
-        <div class="lab-top">
+        <section class="module module-hardware" data-module="HARDWARE">
+            <div class="module-index">04</div>
+            <div class="module-title">HARDWARE</div>
+            <div class="module-line"></div>
+            <div class="module-status">SIGNAL</div>
+        </section>
 
-            <div>
-                <span class="micro-label">
-                    FACILITY
-                </span>
+        <section class="module module-games" data-module="GAMES">
+            <div class="module-index">05</div>
+            <div class="module-title">GAMES</div>
+            <div class="module-line"></div>
+            <div class="module-status">PLAY</div>
+        </section>
 
-                <strong>
-                    3X0C3T / L4B
-                </strong>
+        <section class="module module-media" data-module="MEDIA">
+            <div class="module-index">06</div>
+            <div class="module-title">MEDIA</div>
+            <div class="module-line"></div>
+            <div class="module-status">ARCHIVE</div>
+        </section>
+
+        <section class="core">
+
+            <div class="core-label top-label">
+                <span>SUBLIMINAL</span>
+                <span id="signalState">SIGNAL</span>
             </div>
 
-            <div class="lab-title">
-                <span>
-                    DIGITAL EXPERIMENTATION
-                </span>
+            <div class="crt-shell">
 
-                <strong>
-                    LABORATORY
-                </strong>
-            </div>
+                <div class="crt-frame">
 
-            <div class="lab-readout">
-                <span class="micro-label">
-                    STATUS
-                </span>
+                    <div class="crt-screen" id="crtScreen">
 
-                <strong id="active-module">
-                    STANDBY
-                </strong>
-            </div>
+                        <div class="crt-image" id="crtImage"></div>
 
-        </div>
+                        <div class="crt-noise"></div>
+                        <div class="crt-scanlines"></div>
+                        <div class="crt-vignette"></div>
+                        <div class="crt-glare"></div>
 
-
-        <!-- -------------------------------------------------
-             LAB FLOOR
-             ------------------------------------------------- -->
-
-        <section class="lab-floor" aria-label="Laboratoire">
-
-
-            <!-- =============================================
-                 LEFT MODULES
-                 ============================================= -->
-
-            <div class="lab-column lab-column-left">
-
-                <button
-                    class="lab-module module-web"
-                    type="button"
-                    data-module="WEB"
-                    data-code="MOD-01"
-                    data-description="Interfaces / Applications / Front-end"
-                >
-
-                    <span class="module-corner module-corner-tl">
-                        01
-                    </span>
-
-                    <span class="module-corner module-corner-br">
-                        WEB
-                    </span>
-
-                    <span class="module-signal"></span>
-
-                    <span class="module-name">
-                        WEB
-                    </span>
-
-                    <span class="module-sub">
-                        INTERFACES / FRONT-END
-                    </span>
-
-                </button>
-
-
-                <button
-                    class="lab-module module-design"
-                    type="button"
-                    data-module="DESIGN"
-                    data-code="MOD-03"
-                    data-description="UI / UX / Graphisme / Ergonomie"
-                >
-
-                    <span class="module-corner module-corner-tl">
-                        03
-                    </span>
-
-                    <span class="module-corner module-corner-br">
-                        DESIGN
-                    </span>
-
-                    <span class="module-signal"></span>
-
-                    <span class="module-name">
-                        DESIGN
-                    </span>
-
-                    <span class="module-sub">
-                        UI / UX / VISUAL
-                    </span>
-
-                </button>
-
-
-                <button
-                    class="lab-module module-media"
-                    type="button"
-                    data-module="MEDIA"
-                    data-code="MOD-06"
-                    data-description="Audio / Vidéo / Visualisation / MIDI"
-                >
-
-                    <span class="module-corner module-corner-tl">
-                        06
-                    </span>
-
-                    <span class="module-corner module-corner-br">
-                        MEDIA
-                    </span>
-
-                    <span class="module-signal"></span>
-
-                    <span class="module-name">
-                        MEDIA
-                    </span>
-
-                    <span class="module-sub">
-                        AUDIO / VISUAL / MIDI
-                    </span>
-
-                </button>
-
-            </div>
-
-
-            <!-- =============================================
-                 CENTRAL CORE
-                 ============================================= -->
-
-            <div class="lab-core">
-
-                <div class="core-frame">
-
-                    <div class="core-topline">
-                        <span>
-                            CORE / 000
-                        </span>
-
-                        <span>
-                            L4B-CTRL
-                        </span>
-                    </div>
-
-
-                    <div class="core-display">
-
-                        <div class="core-grid"></div>
-
-                        <div class="core-rings">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                        <div class="crt-ui">
+                            <span id="frameNumber">FRAME 000</span>
+                            <span id="frameMessage">NO SIGNAL</span>
                         </div>
-
-                        <div class="core-crosshair">
-                            <span></span>
-                            <span></span>
-                        </div>
-
-                        <div class="core-logo">
-                            L4B
-                        </div>
-
-                        <div class="core-status">
-                            EXPERIMENTAL SYSTEM
-                        </div>
-
-                    </div>
-
-
-                    <div class="core-readout">
-
-                        <div>
-                            <span>PROJECTS</span>
-                            <strong>90+</strong>
-                        </div>
-
-                        <div>
-                            <span>MODULES</span>
-                            <strong>06</strong>
-                        </div>
-
-                        <div>
-                            <span>MODE</span>
-                            <strong>LIVE</strong>
-                        </div>
-
-                    </div>
-
-
-                    <div class="core-terminal">
-
-                        <span class="terminal-prompt">
-                            &gt;
-                        </span>
-
-                        <span id="terminal-text">
-                            SYSTEM READY // SELECT MODULE
-                        </span>
-
-                        <span class="terminal-cursor"></span>
 
                     </div>
 
                 </div>
 
-            </div>
-
-
-            <!-- =============================================
-                 RIGHT MODULES
-                 ============================================= -->
-
-            <div class="lab-column lab-column-right">
-
-                <button
-                    class="lab-module module-code"
-                    type="button"
-                    data-module="CODE"
-                    data-code="MOD-02"
-                    data-description="Développement / API / Git / Prototypes"
-                >
-
-                    <span class="module-corner module-corner-tl">
-                        02
-                    </span>
-
-                    <span class="module-corner module-corner-br">
-                        CODE
-                    </span>
-
-                    <span class="module-signal"></span>
-
-                    <span class="module-name">
-                        CODE
-                    </span>
-
-                    <span class="module-sub">
-                        DEV / API / GIT
-                    </span>
-
-                </button>
-
-
-                <button
-                    class="lab-module module-hardware"
-                    type="button"
-                    data-module="HARDWARE"
-                    data-code="MOD-04"
-                    data-description="Arduino / ESP / TFT / Électronique"
-                >
-
-                    <span class="module-corner module-corner-tl">
-                        04
-                    </span>
-
-                    <span class="module-corner module-corner-br">
-                        HARDWARE
-                    </span>
-
-                    <span class="module-signal"></span>
-
-                    <span class="module-name">
-                        HARDWARE
-                    </span>
-
-                    <span class="module-sub">
-                        ESP / MCU / I/O
-                    </span>
-
-                </button>
-
-
-                <button
-                    class="lab-module module-games"
-                    type="button"
-                    data-module="GAMES"
-                    data-code="MOD-05"
-                    data-description="Game Design / Interaction / Logic"
-                >
-
-                    <span class="module-corner module-corner-tl">
-                        05
-                    </span>
-
-                    <span class="module-corner module-corner-br">
-                        GAMES
-                    </span>
-
-                    <span class="module-signal"></span>
-
-                    <span class="module-name">
-                        GAMES
-                    </span>
-
-                    <span class="module-sub">
-                        PLAY / LOGIC / INTERACTION
-                    </span>
-
-                </button>
+                <div class="crt-controls">
+                    <span class="crt-led"></span>
+                    <span>CRT-03</span>
+                    <span class="control-separator">/</span>
+                    <span id="frequency">00.00 Hz</span>
+                </div>
 
             </div>
 
-
-            <!-- =============================================
-                 CONNECTION LINES
-                 ============================================= -->
-
-            <div class="connection connection-left-top"></div>
-            <div class="connection connection-left-middle"></div>
-            <div class="connection connection-left-bottom"></div>
-
-            <div class="connection connection-right-top"></div>
-            <div class="connection connection-right-middle"></div>
-            <div class="connection connection-right-bottom"></div>
+            <div class="core-label bottom-label">
+                <span>L4B CORE</span>
+                <span id="coreReadout">WAITING</span>
+            </div>
 
         </section>
 
+        <div class="crosshair crosshair-tl"></div>
+        <div class="crosshair crosshair-tr"></div>
+        <div class="crosshair crosshair-bl"></div>
+        <div class="crosshair crosshair-br"></div>
 
-        <!-- -------------------------------------------------
-             LAB BOTTOM
-             ------------------------------------------------- -->
+        <div class="readout readout-left">
+            <span>SYS</span>
+            <strong id="cpuValue">00%</strong>
+        </div>
 
-        <div class="lab-bottom">
-
-            <div class="measurement">
-                <span>V</span>
-                <i></i>
-                <span>12.04</span>
-            </div>
-
-            <div class="measurement">
-                <span>CPU</span>
-                <i></i>
-                <span id="cpu-value">--</span>
-            </div>
-
-            <div class="measurement">
-                <span>MEM</span>
-                <i></i>
-                <span>ONLINE</span>
-            </div>
-
-            <div class="measurement measurement-right">
-                <span id="screen-size">
-                    -- × --
-                </span>
-
-                <span>
-                    DISPLAY
-                </span>
-            </div>
-
+        <div class="readout readout-right">
+            <span>MEM</span>
+            <strong id="memValue">000</strong>
         </div>
 
     </main>
 
+    <footer class="footer">
 
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
+        <div>
+            <span>L4B // DIGITAL LABORATORY</span>
+        </div>
 
-    <footer class="site-footer">
+        <div>
+            <span id="screenInfo">SCREEN 0000×0000</span>
+        </div>
 
-        <span>
-            3x0c3t / L4B
-        </span>
-
-        <span class="footer-center">
-            BUILD · TEST · BREAK · REBUILD
-        </span>
-
-        <span>
-            <span id="footer-year">
-                2026
-            </span>
-            // DIGITAL LAB
-        </span>
+        <div>
+            <span>3X0C3T © <span id="year"></span></span>
+        </div>
 
     </footer>
 
+</div>
 
-    <script src="index.js"></script>
-
+<script src="index.js"></script>
 </body>
 </html>
