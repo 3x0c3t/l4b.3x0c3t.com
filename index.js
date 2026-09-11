@@ -1,1115 +1,953 @@
-"use strict";
-
 /* =========================================================
-   DOM
+   L4B PROJECT BROWSER
    ========================================================= */
 
-const clockElement =
-    document.getElementById("clock");
+(() => {
 
-const terminalTimeElement =
-    document.getElementById("terminalTime");
+    "use strict";
 
-const yearElement =
-    document.getElementById("year");
 
-const screenInfoElement =
-    document.getElementById("screenInfo");
+    /* =====================================================
+       ELEMENTS
+       ===================================================== */
 
-const crtScreen =
-    document.getElementById("crtScreen");
-
-const crtContent =
-    document.getElementById("crtContent");
-
-const crtImage =
-    document.getElementById("crtImage");
-
-const signalState =
-    document.getElementById("signalState");
-
-const coreReadout =
-    document.getElementById("coreReadout");
-
-const frameNumber =
-    document.getElementById("frameNumber");
-
-const frameMessage =
-    document.getElementById("frameMessage");
-
-const frequency =
-    document.getElementById("frequency");
-
-const signalMode =
-    document.getElementById("signalMode");
-
-const cpuValue =
-    document.getElementById("cpuValue");
-
-const memValue =
-    document.getElementById("memValue");
-
-const edgeCpu =
-    document.getElementById("edgeCpu");
-
-const edgeMem =
-    document.getElementById("edgeMem");
-
-const latency =
-    document.getElementById("latency");
-
-const traffic =
-    document.getElementById("traffic");
-
-const uptimeElement =
-    document.getElementById("uptime");
-
-const terminalMessage =
-    document.getElementById("terminalMessage");
-
-const serverStatus =
-    document.getElementById("serverStatus");
-
-const l4bStatus =
-    document.getElementById("l4bStatus");
-
-const modules =
-    document.querySelectorAll(".module");
-
-/* =========================================================
-   INITIALIZATION
-   ========================================================= */
-
-yearElement.textContent =
-    new Date().getFullYear();
-
-let currentFrame = -1;
-let frameCounter = 0;
-
-let subliminalRunning = true;
-
-let serverUptimeSeconds =
-    127 * 3600 +
-    43 * 60 +
-    21;
-
-/* =========================================================
-   CLOCK
-   ========================================================= */
-
-function updateClock() {
-
-    const now =
-        new Date();
-
-    const hours =
-        String(now.getHours())
-            .padStart(2, "0");
-
-    const minutes =
-        String(now.getMinutes())
-            .padStart(2, "0");
-
-    const seconds =
-        String(now.getSeconds())
-            .padStart(2, "0");
-
-    const time =
-        `${hours}:${minutes}:${seconds}`;
-
-    clockElement.textContent =
-        time;
-
-    terminalTimeElement.textContent =
-        time;
-}
-
-updateClock();
-
-setInterval(
-    updateClock,
-    1000
-);
-
-/* =========================================================
-   SCREEN INFORMATION
-   ========================================================= */
-
-function updateScreenInfo() {
-
-    screenInfoElement.textContent =
-        `SCREEN ${window.innerWidth}×${window.innerHeight}`;
-}
-
-updateScreenInfo();
-
-window.addEventListener(
-    "resize",
-    updateScreenInfo
-);
-
-/* =========================================================
-   UTILS
-   ========================================================= */
-
-function randomBetween(
-    min,
-    max
-) {
-    return Math.random() *
-        (max - min) +
-        min;
-}
-
-function randomInt(
-    min,
-    max
-) {
-    return Math.floor(
-        randomBetween(
-            min,
-            max + 1
-        )
-    );
-}
-
-function pad(
-    value,
-    size
-) {
-    return String(value)
-        .padStart(size, "0");
-}
-
-function formatUptime(
-    seconds
-) {
-
-    const days =
-        Math.floor(
-            seconds / 86400
+    const projectBrowser =
+        document.getElementById(
+            "projectBrowser"
         );
 
-    const hours =
-        Math.floor(
-            (seconds % 86400) /
-            3600
+    const projectBrowserList =
+        document.getElementById(
+            "projectBrowserList"
         );
 
-    const minutes =
-        Math.floor(
-            (seconds % 3600) /
-            60
+    const projectBrowserClose =
+        document.getElementById(
+            "projectBrowserClose"
         );
 
-    const secs =
-        seconds % 60;
-
-    if (days > 0) {
-
-        return `${pad(days, 2)}d ` +
-            `${pad(hours, 2)}:` +
-            `${pad(minutes, 2)}:` +
-            `${pad(secs, 2)}`;
-    }
-
-    return `${pad(hours, 2)}:` +
-        `${pad(minutes, 2)}:` +
-        `${pad(secs, 2)}`;
-}
-
-/* =========================================================
-   SERVER MONITOR
-   ========================================================= */
-
-function updateServerData() {
-
-    const cpu =
-        randomInt(8, 34);
-
-    const memory =
-        randomInt(37, 48);
-
-    const ping =
-        randomInt(11, 34);
-
-    const network =
-        randomInt(18, 96);
-
-    cpuValue.textContent =
-        `${pad(cpu, 2)}%`;
-
-    memValue.textContent =
-        `${pad(memory, 3)}%`;
-
-    edgeCpu.textContent =
-        `${pad(cpu, 2)}%`;
-
-    edgeMem.textContent =
-        `${pad(memory, 3)}%`;
-
-    latency.textContent =
-        `${pad(ping, 3)} MS`;
-
-    traffic.textContent =
-        `${pad(network, 3)} KB/S`;
-
-    serverUptimeSeconds++;
-
-    uptimeElement.textContent =
-        formatUptime(
-            serverUptimeSeconds
-        );
-}
-
-updateServerData();
-
-setInterval(
-    updateServerData,
-    1000
-);
-
-/* =========================================================
-   SUBLIMINAL FRAMES
-   ========================================================= */
-
-const subliminalFrames = [
-
-    {
-        message: "OBSERVE",
-        color: "#00ff99",
-        duration: 80,
-
-        svg: `
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 800 450">
-
-                <rect
-                    width="800"
-                    height="450"
-                    fill="#020806"/>
-
-                <circle
-                    cx="400"
-                    cy="225"
-                    r="115"
-                    fill="none"
-                    stroke="#00ff99"
-                    stroke-width="4"/>
-
-                <circle
-                    cx="400"
-                    cy="225"
-                    r="72"
-                    fill="none"
-                    stroke="#00ff99"
-                    stroke-width="2"/>
-
-                <circle
-                    cx="400"
-                    cy="225"
-                    r="25"
-                    fill="#00ff99"/>
-
-                <path
-                    d="M120 225 H680"
-                    stroke="#00ff99"
-                    stroke-width="1"/>
-
-                <path
-                    d="M400 70 V380"
-                    stroke="#00ff99"
-                    stroke-width="1"/>
-
-                <text
-                    x="400"
-                    y="410"
-                    text-anchor="middle"
-                    fill="#00ff99"
-                    font-family="monospace"
-                    font-size="22">
-                    OBSERVE
-                </text>
-
-            </svg>
-        `
-    },
-
-    {
-        message: "WAKE",
-        color: "#00eaff",
-        duration: 90,
-
-        svg: `
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 800 450">
-
-                <rect
-                    width="800"
-                    height="450"
-                    fill="#02070b"/>
-
-                <ellipse
-                    cx="400"
-                    cy="225"
-                    rx="190"
-                    ry="105"
-                    fill="none"
-                    stroke="#00eaff"
-                    stroke-width="4"/>
-
-                <ellipse
-                    cx="400"
-                    cy="225"
-                    rx="85"
-                    ry="48"
-                    fill="#00eaff"
-                    opacity=".18"/>
-
-                <circle
-                    cx="400"
-                    cy="225"
-                    r="26"
-                    fill="#00eaff"/>
-
-                <path
-                    d="M210 225 H590"
-                    stroke="#00eaff"
-                    stroke-width="2"/>
-
-                <text
-                    x="400"
-                    y="90"
-                    text-anchor="middle"
-                    fill="#00eaff"
-                    font-family="monospace"
-                    font-size="24">
-                    WAKE
-                </text>
-
-            </svg>
-        `
-    },
-
-    {
-        message: "SIGNAL LOST",
-        color: "#ff315c",
-        duration: 70,
-
-        svg: `
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 800 450">
-
-                <rect
-                    width="800"
-                    height="450"
-                    fill="#080204"/>
-
-                <path
-                    d="
-                        M60 230
-                        L125 230
-                        L155 130
-                        L205 320
-                        L250 190
-                        L290 230
-                        L350 230
-                        L390 100
-                        L430 350
-                        L470 230
-                        L540 230
-                        L575 170
-                        L610 290
-                        L650 230
-                        L740 230"
-                    fill="none"
-                    stroke="#ff315c"
-                    stroke-width="5"/>
-
-                <text
-                    x="400"
-                    y="85"
-                    text-anchor="middle"
-                    fill="#ff315c"
-                    font-family="monospace"
-                    font-size="20">
-                    SIGNAL LOST
-                </text>
-
-            </svg>
-        `
-    },
-
-    {
-        message: "MEMORY",
-        color: "#a66cff",
-        duration: 85,
-
-        svg: `
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 800 450">
-
-                <rect
-                    width="800"
-                    height="450"
-                    fill="#06030b"/>
-
-                <rect
-                    x="245"
-                    y="100"
-                    width="310"
-                    height="250"
-                    fill="none"
-                    stroke="#a66cff"
-                    stroke-width="3"/>
-
-                <path
-                    d="
-                        M280 150 H520
-                        M280 190 H480
-                        M280 230 H535
-                        M280 270 H430
-                        M280 310 H510"
-                    stroke="#a66cff"
-                    stroke-width="4"/>
-
-                <text
-                    x="400"
-                    y="65"
-                    text-anchor="middle"
-                    fill="#a66cff"
-                    font-family="monospace"
-                    font-size="18">
-                    MEMORY
-                </text>
-
-            </svg>
-        `
-    },
-
-    {
-        message: "LOOK BEHIND",
-        color: "#ff9d00",
-        duration: 75,
-
-        svg: `
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 800 450">
-
-                <rect
-                    width="800"
-                    height="450"
-                    fill="#0a0702"/>
-
-                <polygon
-                    points="400,55 620,380 180,380"
-                    fill="none"
-                    stroke="#ff9d00"
-                    stroke-width="4"/>
-
-                <circle
-                    cx="400"
-                    cy="245"
-                    r="52"
-                    fill="none"
-                    stroke="#ff9d00"
-                    stroke-width="5"/>
-
-                <circle
-                    cx="400"
-                    cy="245"
-                    r="16"
-                    fill="#ff9d00"/>
-
-                <text
-                    x="400"
-                    y="420"
-                    text-anchor="middle"
-                    fill="#ff9d00"
-                    font-family="monospace"
-                    font-size="17">
-                    LOOK BEHIND
-                </text>
-
-            </svg>
-        `
-    },
-
-    {
-        message: "3X0C3T",
-        color: "#ffffff",
-        duration: 65,
-
-        svg: `
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 800 450">
-
-                <rect
-                    width="800"
-                    height="450"
-                    fill="#050505"/>
-
-                <text
-                    x="400"
-                    y="255"
-                    text-anchor="middle"
-                    fill="white"
-                    font-family="monospace"
-                    font-size="76"
-                    font-weight="bold"
-                    letter-spacing="15">
-                    3X0C3T
-                </text>
-
-                <line
-                    x1="160"
-                    y1="290"
-                    x2="640"
-                    y2="290"
-                    stroke="white"
-                    stroke-width="2"/>
-
-            </svg>
-        `
-    },
-
-    {
-        message: "WAKE UP",
-        color: "#00ff99",
-        duration: 55,
-
-        svg: `
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 800 450">
-
-                <rect
-                    width="800"
-                    height="450"
-                    fill="#010704"/>
-
-                <text
-                    x="400"
-                    y="250"
-                    text-anchor="middle"
-                    fill="#00ff99"
-                    font-family="monospace"
-                    font-size="62"
-                    font-weight="bold"
-                    letter-spacing="10">
-                    WAKE UP
-                </text>
-
-            </svg>
-        `
-    },
-
-    {
-        message: "SYSTEM",
-        color: "#00eaff",
-        duration: 75,
-
-        svg: `
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 800 450">
-
-                <rect
-                    width="800"
-                    height="450"
-                    fill="#02080c"/>
-
-                <g
-                    fill="none"
-                    stroke="#00eaff"
-                    stroke-width="2">
-
-                    <rect
-                        x="220"
-                        y="105"
-                        width="360"
-                        height="240"/>
-
-                    <rect
-                        x="260"
-                        y="145"
-                        width="280"
-                        height="160"/>
-
-                    <path
-                        d="
-                            M220 175 H160
-                            M220 225 H140
-                            M220 275 H160
-                            M580 175 H640
-                            M580 225 H660
-                            M580 275 H640"/>
-
-                </g>
-
-                <text
-                    x="400"
-                    y="220"
-                    text-anchor="middle"
-                    fill="#00eaff"
-                    font-family="monospace"
-                    font-size="30">
-                    SYSTEM
-                </text>
-
-            </svg>
-        `
-    }
-
-];
-
-/* =========================================================
-   SVG
-   ========================================================= */
-
-function svgToDataUri(
-    svg
-) {
-
-    return "data:image/svg+xml;charset=UTF-8," +
-        encodeURIComponent(svg);
-}
-
-/* =========================================================
-   FRAME SELECTION
-   ========================================================= */
-
-function selectNextFrame() {
-
-    let nextFrame;
-
-    do {
-
-        nextFrame =
-            randomInt(
-                0,
-                subliminalFrames.length - 1
-            );
-
-    } while (
-        nextFrame === currentFrame &&
-        subliminalFrames.length > 1
-    );
-
-    currentFrame =
-        nextFrame;
-
-    return subliminalFrames[
-        currentFrame
-    ];
-}
-
-/* =========================================================
-   SHOW SUBLIMINAL
-   ========================================================= */
-
-function showFrame(
-    frame
-) {
-
-    frameCounter++;
-
-    frameNumber.textContent =
-        `FRAME ${pad(frameCounter, 3)}`;
-
-    frameMessage.textContent =
-        frame.message;
-
-    signalState.textContent =
-        "SUBLIMINAL";
-
-    signalState.style.color =
-        frame.color;
-
-    coreReadout.textContent =
-        frame.message;
-
-    coreReadout.style.color =
-        frame.color;
-
-    signalMode.textContent =
-        "SUBLIMINAL";
-
-    terminalMessage.textContent =
-        "SIGNAL INTERRUPT";
-
-    crtImage.style.backgroundImage =
-        `url("${svgToDataUri(frame.svg)}")`;
-
-    crtImage.style.filter =
-        `
-        contrast(${randomBetween(1.2, 1.8)})
-        brightness(${randomBetween(0.7, 1.15)})
-        saturate(${randomBetween(0.7, 1.3)})
-        `;
-
-    crtImage.classList.remove(
-        "glitch"
-    );
-
-    void crtImage.offsetWidth;
-
-    crtImage.classList.add(
-        "visible"
-    );
 
     if (
-        Math.random() > 0.25
+        !projectBrowser ||
+        !projectBrowserList ||
+        !projectBrowserClose
     ) {
 
-        crtImage.classList.add(
-            "glitch"
-        );
-    }
-
-    crtContent.style.opacity =
-        "0.08";
-
-    const glitchTime =
-        randomInt(
-            40,
-            110
+        console.error(
+            "L4B PROJECT BROWSER : éléments HTML introuvables."
         );
 
-    setTimeout(
-        () => {
-
-            crtImage.classList.remove(
-                "glitch"
-            );
-
-        },
-        glitchTime
-    );
-}
-
-/* =========================================================
-   HIDE SUBLIMINAL
-   ========================================================= */
-
-function hideFrame() {
-
-    crtImage.classList.remove(
-        "visible"
-    );
-
-    crtImage.classList.remove(
-        "glitch"
-    );
-
-    crtContent.style.opacity =
-        "0.9";
-
-    signalState.textContent =
-        "SYSTEM";
-
-    signalState.style.color =
-        "#00ff99";
-
-    coreReadout.textContent =
-        "STANDBY";
-
-    coreReadout.style.color =
-        "#00eaff";
-
-    signalMode.textContent =
-        "MONITOR";
-
-    terminalMessage.textContent =
-        "MONITORING ACTIVE";
-}
-
-/* =========================================================
-   SUBLIMINAL CYCLE
-   ========================================================= */
-
-function subliminalCycle() {
-
-    if (
-        !subliminalRunning
-    ) {
         return;
     }
 
-    const frame =
-        selectNextFrame();
 
-    /*
-     * Long idle period.
-     * The CRT normally displays the
-     * server / L4B monitoring interface.
-     */
+    /* =====================================================
+       CATALOGUE DES PROJETS
+       ===================================================== */
 
-    const idleBefore =
-        randomInt(
-            4500,
-            12000
-        );
+    const projects = {
 
-    setTimeout(
-        () => {
+        WEB: [
 
-            if (
-                !subliminalRunning
-            ) {
-                return;
+            {
+                id: "00",
+                name: "LinkTree 3x0c3t",
+                path: "00_LinkTree_3x0c3t"
+            },
+
+            {
+                id: "00.2",
+                name: "LinkTree 3x0c3t 2",
+                path: "00_LinkTree_3x0c3t_2"
+            },
+
+            {
+                id: "06",
+                name: "CV",
+                path: "06_CV"
+            },
+
+            {
+                id: "07",
+                name: "CV",
+                path: "07_CV"
+            },
+
+            {
+                id: "09",
+                name: "Template",
+                path: "09_TEMPLATE"
+            },
+
+            {
+                id: "16",
+                name: "404",
+                path: "16_404_01"
+            },
+
+            {
+                id: "38",
+                name: "Template Responsive",
+                path: "38_Template_RESPONSIVE"
+            },
+
+            {
+                id: "55",
+                name: "Menu Accueil",
+                path: "55_3x0c3t_MENU_ACCUEIL"
+            },
+
+            {
+                id: "56",
+                name: "Mail Contact",
+                path: "56_MailReponseCont4ct"
+            },
+
+            {
+                id: "60",
+                name: "3x0c3t.com TEMP",
+                path: "60_3x0c3t.com_TEMP"
+            },
+
+            {
+                id: "61",
+                name: "Burger Menu",
+                path: "61_burgerMenu"
+            },
+
+            {
+                id: "62",
+                name: "3x0c3t.com",
+                path: "62_3x0c3t.com"
+            },
+
+            {
+                id: "63",
+                name: "Dashboard",
+                path: "63_DASHBOARD"
+            },
+
+            {
+                id: "68",
+                name: "Template",
+                path: "68_TEMPLATE"
+            },
+
+            {
+                id: "73",
+                name: "App Conteneur",
+                path: "73_APP_CONTENEUR"
+            },
+
+            {
+                id: "75",
+                name: "Base App",
+                path: "75_BASE_APP"
+            },
+
+            {
+                id: "84",
+                name: "OpenWeather API",
+                path: "84_API_OpenWeather"
             }
 
-            showFrame(
-                frame
+        ],
+
+
+        CODE: [
+
+            {
+                id: "01",
+                name: "API Flags",
+                path: "01_API_FLAGS"
+            },
+
+            {
+                id: "03",
+                name: "Prompt Generator",
+                path: "03_Prompt_generator"
+            },
+
+            {
+                id: "05",
+                name: "Veille Techno",
+                path: "05_Veille_Techno"
+            },
+
+            {
+                id: "05.2",
+                name: "Veille Techno 2",
+                path: "05_Veille_Techno2"
+            },
+
+            {
+                id: "08",
+                name: "QR Code",
+                path: "08_QRcode"
+            },
+
+            {
+                id: "08.2",
+                name: "QR Code PNG / STL / SVG",
+                path: "08.2_QR CODE_PNG_STL_SVG"
+            },
+
+            {
+                id: "17",
+                name: "M0D Switcher",
+                path: "17_M0D_Switcher"
+            },
+
+            {
+                id: "18",
+                name: "C0LoRs",
+                path: "18_C0LoRs"
+            },
+
+            {
+                id: "25",
+                name: "Générateur de grilles CSS",
+                path: "25_Generateur_de_grilles_css"
+            },
+
+            {
+                id: "26",
+                name: "Colors Generator",
+                path: "26_ColorsGenerator"
+            },
+
+            {
+                id: "31",
+                name: "Buttons CSS",
+                path: "31_Buttons_CSS"
+            },
+
+            {
+                id: "32",
+                name: "Buttons CSS Tester",
+                path: "32_Buttons_CSS_Tester"
+            },
+
+            {
+                id: "34",
+                name: "Prompt Test",
+                path: "34_Prompt_Test"
+            },
+
+            {
+                id: "35",
+                name: "Theme Switcher",
+                path: "35_theme_switcher"
+            },
+
+            {
+                id: "36",
+                name: "Theme Switcher",
+                path: "36_theme_switcher"
+            },
+
+            {
+                id: "40",
+                name: "Futuristic Control Panel",
+                path: "40_Futuristic_CTRL_P4NEL"
+            },
+
+            {
+                id: "41",
+                name: "Layered Text Challenge V1",
+                path: "41_CodePen_LAYERED_TEXT_CHALLENGE_V1"
+            },
+
+            {
+                id: "42",
+                name: "Layered Text Challenge V2",
+                path: "42_CodePen_LAYERED_TEXT_CHALLENGE_V2"
+            },
+
+            {
+                id: "49",
+                name: "SCSS Tests",
+                path: "49_SCSS_Tests"
+            },
+
+            {
+                id: "50",
+                name: "API Test",
+                path: "50_API_TEST"
+            },
+
+            {
+                id: "52",
+                name: "Layer Convertor",
+                path: "52_LAYER_CONVERTOR"
+            },
+
+            {
+                id: "81",
+                name: "CSS Builder",
+                path: "81_CSS_builder"
+            },
+
+            {
+                id: "82",
+                name: "Interface Ergo",
+                path: "82_INTERFACE_ERGO"
+            },
+
+            {
+                id: "83",
+                name: "Interface Editeur",
+                path: "83_Interface_Editeur"
+            },
+
+            {
+                id: "87",
+                name: "SPE4Knerd",
+                path: "87_SPE4Knerd"
+            },
+
+            {
+                id: "89",
+                name: "Version Selektor",
+                path: "89_version_SELEKT0R"
+            }
+
+        ],
+
+
+        DESIGN: [
+
+            {
+                id: "10",
+                name: "Animation",
+                path: "10_Animation"
+            },
+
+            {
+                id: "11",
+                name: "Carousel",
+                path: "11_Carousel"
+            },
+
+            {
+                id: "12",
+                name: "Carousel",
+                path: "12_Carousel"
+            },
+
+            {
+                id: "13.01",
+                name: "Carousel Events",
+                path: "13_01_Carousel_events"
+            },
+
+            {
+                id: "13",
+                name: "Carousel",
+                path: "13_Carousel"
+            },
+
+            {
+                id: "13.2",
+                name: "Carousel SCSS",
+                path: "13_Carousel_scss"
+            },
+
+            {
+                id: "14",
+                name: "AnimAti0n",
+                path: "14_AnimAti0n"
+            },
+
+            {
+                id: "15",
+                name: "Icon Links",
+                path: "15_iconLinks"
+            },
+
+            {
+                id: "21",
+                name: "Emojis Page",
+                path: "21_EmojisPage"
+            },
+
+            {
+                id: "27",
+                name: "Oskar Litovitch",
+                path: "27-1_OSKAR_LITOVITCH"
+            },
+
+            {
+                id: "27.1",
+                name: "Jean Brisy",
+                path: "27_Jean_Brisy"
+            },
+
+            {
+                id: "28",
+                name: "Full Calendar",
+                path: "28_Full_Calendar"
+            },
+
+            {
+                id: "29",
+                name: "Le SkyLAB",
+                path: "29_Le_SkyLAB"
+            },
+
+            {
+                id: "30",
+                name: "3D Animation",
+                path: "30_3Danimation"
+            },
+
+            {
+                id: "33",
+                name: "Loading Page",
+                path: "33_L04Ding_Page"
+            },
+
+            {
+                id: "39",
+                name: "Cursors",
+                path: "39_Cursors"
+            },
+
+            {
+                id: "48",
+                name: "STL Viewer",
+                path: "48_STL_viewer"
+            },
+
+            {
+                id: "51",
+                name: "BD",
+                path: "51_BD_1"
+            },
+
+            {
+                id: "53",
+                name: "SplashScreen",
+                path: "53_SplashScreen"
+            },
+
+            {
+                id: "54",
+                name: "SplashScreen",
+                path: "54_SplashScreen"
+            },
+
+            {
+                id: "57",
+                name: "Galerie Brico",
+                path: "57_G4LERIE_BRICO"
+            },
+
+            {
+                id: "58",
+                name: "NextGen",
+                path: "58_NextGen"
+            },
+
+            {
+                id: "58.2",
+                name: "NextGen 2",
+                path: "58_NextGen2"
+            },
+
+            {
+                id: "69",
+                name: "Texture Generator",
+                path: "69_TEXTURE_Generator"
+            },
+
+            {
+                id: "70",
+                name: "Texture User",
+                path: "70_TEXTURE_User"
+            },
+
+            {
+                id: "72",
+                name: "3D Test",
+                path: "72_3D_Test"
+            },
+
+            {
+                id: "76",
+                name: "Visualiser",
+                path: "76_ViSuALiSeR"
+            },
+
+            {
+                id: "86",
+                name: "TFT Designer",
+                path: "86_TFT_Designer"
+            }
+
+        ],
+
+
+        HARDWARE: [
+
+            {
+                id: "22",
+                name: "LED Code Simulator",
+                path: "22_LED_Code_Simulator"
+            },
+
+            {
+                id: "23",
+                name: "OHM Resistance",
+                path: "23_OHM_RESISTANCE"
+            },
+
+            {
+                id: "29",
+                name: "Le SkyLAB",
+                path: "29_Le_SkyLAB"
+            },
+
+            {
+                id: "43",
+                name: "Arduino Web Interface",
+                path: "43_Arduino_Web_Interface"
+            },
+
+            {
+                id: "65",
+                name: "Drive 3x0c3t",
+                path: "65_DRIVE_3X0C3T"
+            },
+
+            {
+                id: "73",
+                name: "App Conteneur",
+                path: "73_APP_CONTENEUR"
+            },
+
+            {
+                id: "85",
+                name: "MIC Visualizer",
+                path: "85_MiC_VISUALIZER"
+            },
+
+            {
+                id: "86",
+                name: "TFT Designer",
+                path: "86_TFT_Designer"
+            }
+
+        ],
+
+
+        GAMES: [
+
+            {
+                id: "64",
+                name: "Tower Defense Demo",
+                path: "64_TOWER_DEFENSE_DEMO/public/index.html"
+            },
+
+            {
+                id: "66",
+                name: "Quiz Musical",
+                path: "66_QUIZmusical"
+            },
+
+            {
+                id: "71",
+                name: "SP4CE Program",
+                path: "71_SP4CEprogram"
+            },
+
+            {
+                id: "74",
+                name: "Game",
+                path: "74_GAME"
+            },
+
+            {
+                id: "78",
+                name: "OFF ROAD FURY",
+                path: "78_0FF_RO4D_FURY"
+            },
+
+            {
+                id: "79",
+                name: "Game Interface",
+                path: "79_GAMEinterface"
+            },
+
+            {
+                id: "88",
+                name: "AN0THER G4ME",
+                path: "88_AN0THER_G4ME"
+            },
+
+            {
+                id: "89",
+                name: "Version Selektor",
+                path: "89_version_SELEKT0R"
+            }
+
+        ],
+
+
+        MEDIA: [
+
+            {
+                id: "02.1",
+                name: "S0und Player",
+                path: "02_Sound_Music/01_S0und_PLAYer"
+            },
+
+            {
+                id: "02.2",
+                name: "Synth",
+                path: "02_Sound_Music/02_Synth"
+            },
+
+            {
+                id: "04",
+                name: "Films",
+                path: "04_FILMS"
+            },
+
+            {
+                id: "44",
+                name: "InstaCutter",
+                path: "44_InstaCutter"
+            },
+
+            {
+                id: "45",
+                name: "AMP Player",
+                path: "45_3x0c3t_AMP_PLAYER"
+            },
+
+            {
+                id: "46",
+                name: "SinglePage Festival",
+                path: "46_SinglePage_Festival"
+            },
+
+            {
+                id: "47",
+                name: "Bandcamp Accounts",
+                path: "47_Bandcamp_accounts"
+            },
+
+            {
+                id: "58",
+                name: "NextGen",
+                path: "58_NextGen"
+            },
+
+            {
+                id: "66",
+                name: "Quiz Musical",
+                path: "66_QUIZmusical"
+            },
+
+            {
+                id: "67",
+                name: "ANiMPAG3",
+                path: "67_ANiMPAG3"
+            },
+
+            {
+                id: "77",
+                name: "SHRUTiB0x",
+                path: "77_SHRUTiB0x"
+            },
+
+            {
+                id: "80",
+                name: "MP3 Player",
+                path: "80_mp3_PL4YER"
+            },
+
+            {
+                id: "85",
+                name: "MIC Visualizer",
+                path: "85_MiC_VISUALIZER"
+            },
+
+            {
+                id: "87",
+                name: "SPE4Knerd",
+                path: "87_SPE4Knerd"
+            }
+
+        ]
+
+    };
+
+
+    /* =====================================================
+       TITRES
+       ===================================================== */
+
+    const descriptions = {
+
+        WEB:
+            "WEB / ACCESS / NETWORK",
+
+        CODE:
+            "CODE / SOURCE / DEVELOPMENT",
+
+        DESIGN:
+            "DESIGN / VISUAL / UX",
+
+        HARDWARE:
+            "HARDWARE / MAKER / LAB",
+
+        GAMES:
+            "GAMES / PLAY / TEST",
+
+        MEDIA:
+            "MEDIA / AUDIO / VIDEO"
+
+    };
+
+
+    /* =====================================================
+       CREATION D'UN PROJET
+       ===================================================== */
+
+    function createProjectItem(
+        project
+    ) {
+
+        const link =
+            document.createElement(
+                "a"
             );
 
-            setTimeout(
-                () => {
+        link.className =
+            "project-browser-item";
 
-                    hideFrame();
+        link.href =
+            "/L4B/" +
+            project.path;
 
-                    const idleAfter =
-                        randomInt(
-                            1800,
-                            6000
-                        );
+        link.target =
+            "_blank";
 
-                    setTimeout(
-                        subliminalCycle,
-                        idleAfter
+        link.rel =
+            "noopener noreferrer";
+
+        link.innerHTML = `
+
+            <span class="project-number">
+                ${project.id}
+            </span>
+
+            <span class="project-name">
+                ${project.name}
+            </span>
+
+            <span class="project-path">
+                /L4B/${project.path}
+            </span>
+
+        `;
+
+        return link;
+    }
+
+
+    /* =====================================================
+       OUVERTURE
+       ===================================================== */
+
+    function openProjectBrowser(
+        category
+    ) {
+
+        const categoryProjects =
+            projects[category];
+
+        if (
+            !categoryProjects
+        ) {
+            return;
+        }
+
+
+        projectBrowserList.innerHTML =
+            "";
+
+
+        categoryProjects.forEach(
+            (project) => {
+
+                const item =
+                    createProjectItem(
+                        project
                     );
 
-                },
-                frame.duration
-            );
-
-        },
-        idleBefore
-    );
-}
-
-subliminalCycle();
-
-/* =========================================================
-   MODULE INTERACTION
-   ========================================================= */
-
-modules.forEach(
-    (module) => {
-
-        module.addEventListener(
-            "mouseenter",
-            () => {
-
-                const name =
-                    module.dataset.module;
-
-                coreReadout.textContent =
-                    name;
-
-                coreReadout.style.color =
-                    "#00eaff";
-
-                signalState.textContent =
-                    "LINK";
-
-                signalState.style.color =
-                    "#00ff99";
-
-                terminalMessage.textContent =
-                    `MODULE ${name} ACTIVE`;
-            }
-        );
-
-        module.addEventListener(
-            "mouseleave",
-            () => {
-
-                if (
-                    crtImage.classList.contains(
-                        "visible"
-                    )
-                ) {
-                    return;
-                }
-
-                coreReadout.textContent =
-                    "STANDBY";
-
-                signalState.textContent =
-                    "SYSTEM";
-
-                signalState.style.color =
-                    "#00ff99";
-
-                terminalMessage.textContent =
-                    "MONITORING ACTIVE";
-            }
-        );
-    }
-);
-
-/* =========================================================
-   CRT POINTER PARALLAX
-   ========================================================= */
-
-let pointerX = 0.5;
-let pointerY = 0.5;
-
-window.addEventListener(
-    "pointermove",
-    (event) => {
-
-        pointerX =
-            event.clientX /
-            window.innerWidth;
-
-        pointerY =
-            event.clientY /
-            window.innerHeight;
-    }
-);
-
-setInterval(
-    () => {
-
-        const offsetX =
-            (pointerX - 0.5) * 2;
-
-        const offsetY =
-            (pointerY - 0.5) * 2;
-
-        crtImage.style.transform =
-            `
-            translate(
-                ${offsetX * 0.7}px,
-                ${offsetY * 0.4}px
-            )
-            scale(1.03)
-            `;
-
-    },
-    80
-);
-
-/* =========================================================
-   CRT FLICKER
-   ========================================================= */
-
-setInterval(
-    () => {
-
-        if (
-            Math.random() < 0.08
-        ) {
-
-            crtScreen.style.opacity =
-                String(
-                    randomBetween(
-                        0.76,
-                        0.96
-                    )
+                projectBrowserList.appendChild(
+                    item
                 );
 
-            setTimeout(
-                () => {
+            }
+        );
 
-                    crtScreen.style.opacity =
-                        "1";
 
-                },
-                randomInt(
-                    20,
-                    80
-                )
+        const title =
+            projectBrowser.querySelector(
+                ".project-browser-header h2"
             );
+
+
+        const kicker =
+            projectBrowser.querySelector(
+                ".project-browser-kicker"
+            );
+
+
+        if (title) {
+
+            title.textContent =
+                category;
+
         }
 
-    },
-    600
-);
 
-/* =========================================================
-   KEYBOARD
-   ========================================================= */
+        if (kicker) {
 
-window.addEventListener(
-    "keydown",
-    (event) => {
+            kicker.textContent =
+                descriptions[category];
 
-        /*
-         * SPACE :
-         * force une image subliminale.
-         */
-
-        if (
-            event.code === "Space"
-        ) {
-
-            event.preventDefault();
-
-            const frame =
-                selectNextFrame();
-
-            showFrame(
-                frame
-            );
-
-            setTimeout(
-                hideFrame,
-                frame.duration
-            );
         }
 
-        /*
-         * S :
-         * active / désactive
-         * le canal subliminal.
-         */
 
-        if (
-            event.key.toLowerCase() === "s"
-        ) {
+        projectBrowser.classList.add(
+            "visible"
+        );
 
-            subliminalRunning =
-                !subliminalRunning;
+
+        projectBrowser.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+
+        document.body.classList.add(
+            "project-browser-open"
+        );
+
+    }
+
+
+    /* =====================================================
+       FERMETURE
+       ===================================================== */
+
+    function closeProjectBrowser() {
+
+        projectBrowser.classList.remove(
+            "visible"
+        );
+
+
+        projectBrowser.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+
+        document.body.classList.remove(
+            "project-browser-open"
+        );
+
+    }
+
+
+    /* =====================================================
+       MODULES WEB / CODE / DESIGN / HARDWARE
+       GAMES / MEDIA
+       ===================================================== */
+
+    document
+        .querySelectorAll(
+            ".module[data-module]"
+        )
+        .forEach(
+            (module) => {
+
+                module.addEventListener(
+                    "click",
+                    () => {
+
+                        const category =
+                            module.dataset.module;
+
+                        openProjectBrowser(
+                            category
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+    /* =====================================================
+       BOUTON FERMER
+       ===================================================== */
+
+    projectBrowserClose.addEventListener(
+        "click",
+        closeProjectBrowser
+    );
+
+
+    /* =====================================================
+       CLIC SUR LE FOND
+       ===================================================== */
+
+    projectBrowser.addEventListener(
+        "click",
+        (event) => {
 
             if (
-                !subliminalRunning
+                event.target ===
+                projectBrowser
             ) {
 
-                hideFrame();
+                closeProjectBrowser();
 
-                frameMessage.textContent =
-                    "PAUSED";
-
-                coreReadout.textContent =
-                    "PAUSED";
-
-                signalState.textContent =
-                    "OFF";
-
-                signalState.style.color =
-                    "#ff315c";
-
-                signalMode.textContent =
-                    "PAUSED";
-
-            } else {
-
-                signalState.textContent =
-                    "SYSTEM";
-
-                signalState.style.color =
-                    "#00ff99";
-
-                signalMode.textContent =
-                    "MONITOR";
-
-                terminalMessage.textContent =
-                    "MONITORING ACTIVE";
-
-                subliminalCycle();
             }
+
         }
-    }
-);
+    );
+
+
+    /* =====================================================
+       TOUCHE ESC
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "Escape" &&
+                projectBrowser.classList.contains(
+                    "visible"
+                )
+            ) {
+
+                closeProjectBrowser();
+
+            }
+
+        }
+    );
+
+
+})();
