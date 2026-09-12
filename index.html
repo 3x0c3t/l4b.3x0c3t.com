@@ -1,707 +1,492 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>-3xØc3t- L4B | Digital L4B & Experimentation</title>
 
     <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+        name="description"
+        content="3x0c3t L4B - Digital experimentation, web development, code, design, hardware, media and games."
+    >
 
-    <meta
-        name="theme-color"
-        content="#02070b">
-
-    <title>L4B // 3x0c3t</title>
-
-    <link
-        rel="stylesheet"
-        href="index.css">
-
+    <link rel="stylesheet" href="index.css">
 </head>
-
 
 <body>
 
-<div id="app">
+<div class="crt-screen">
 
-
-    <!-- =====================================================
+    <!-- =========================================================
          HEADER
-         ===================================================== -->
+    ========================================================== -->
 
-    <header class="topbar">
+    <header class="site-header">
 
-        <div class="header-inner">
+        <div class="header-brand">
+            <div class="brand-main">-3xØc3t- L4B</div>
+            <div class="brand-sub">DIGITAL L4B &amp; EXPERIMENTATION</div>
+        </div>
 
-            <div class="brand">
-
-                <span class="brand-mark">
-                    L4B
-                </span>
-
-                <span class="brand-sub">
-                    // 3x0c3t LABORATORY
-                </span>
-
-            </div>
-
+        <div class="header-system">
 
             <div class="system-status">
-
-                <span class="status-dot"></span>
-
-                <span>
-                    SYSTEM ONLINE
-                </span>
-
-                <span id="clock">
-                    00:00:00
-                </span>
-
+                <span class="status-led"></span>
+                <span>SYSTEM ONLINE</span>
             </div>
 
+            <div id="clock">00:00:00</div>
+
         </div>
+
+        <nav class="header-nav">
+            <a
+                href="https://github.com/3x0c3t"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GITHUB
+            </a>
+
+            <button id="index-button" type="button">
+                INDEX
+            </button>
+        </nav>
 
     </header>
 
 
-    <!-- =====================================================
+    <!-- =========================================================
          MAIN
-         ===================================================== -->
+    ========================================================== -->
 
-    <main class="lab">
+    <main class="site-main">
 
-        <div class="lab-grid">
+        <!-- HERO -->
 
+        <section class="hero">
 
-            <!-- =================================================
-                 LEFT MODULES
-                 ================================================= -->
+            <div class="hero-grid">
 
-            <section
-                class="module module-web"
-                data-module="WEB">
+                <div class="hero-left">
 
-                <div class="module-top">
+                    <div class="eyebrow">
+                        DIGITAL EXPERIMENTATION / LABORATORY
+                    </div>
 
-                    <span class="module-index">
-                        01
-                    </span>
+                    <h1>
+                        -3xØc3t-
+                        <span>L4B</span>
+                    </h1>
 
-                    <span class="module-state">
-                        ONLINE
-                    </span>
+                    <p class="hero-description">
+                        WEB / CODE / DESIGN / HARDWARE / MEDIA / GAMES
+                    </p>
 
                 </div>
 
-                <div class="module-title">
+                <div class="hero-core">
+
+                    <div class="core-ring">
+                        <div class="core-inner">
+                            <span>L4B</span>
+                            <small>CORE</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CATEGORY NAVIGATION
+        ====================================================== -->
+
+        <section class="category-section">
+
+            <div class="section-label">
+                PROJECT INDEX
+            </div>
+
+            <div class="category-navigation">
+
+                <button
+                    class="category-button active"
+                    data-category="ALL"
+                    type="button"
+                >
+                    ALL
+                    <span class="category-count" data-count="ALL">0</span>
+                </button>
+
+                <button
+                    class="category-button"
+                    data-category="WEB"
+                    type="button"
+                >
                     WEB
-                </div>
+                    <span class="category-count" data-count="WEB">0</span>
+                </button>
 
-                <div class="module-line"></div>
-
-                <div class="module-status">
-                    ACCESS / NETWORK
-                </div>
-
-            </section>
-
-
-            <section
-                class="module module-code"
-                data-module="CODE">
-
-                <div class="module-top">
-
-                    <span class="module-index">
-                        02
-                    </span>
-
-                    <span class="module-state">
-                        READY
-                    </span>
-
-                </div>
-
-                <div class="module-title">
+                <button
+                    class="category-button"
+                    data-category="CODE"
+                    type="button"
+                >
                     CODE
-                </div>
+                    <span class="category-count" data-count="CODE">0</span>
+                </button>
 
-                <div class="module-line"></div>
-
-                <div class="module-status">
-                    SOURCE / DEV
-                </div>
-
-            </section>
-
-
-            <section
-                class="module module-games"
-                data-module="GAMES">
-
-                <div class="module-top">
-
-                    <span class="module-index">
-                        05
-                    </span>
-
-                    <span class="module-state">
-                        READY
-                    </span>
-
-                </div>
-
-                <div class="module-title">
-                    GAMES
-                </div>
-
-                <div class="module-line"></div>
-
-                <div class="module-status">
-                    PLAY / TEST
-                </div>
-
-            </section>
-
-
-            <!-- =================================================
-                 RIGHT MODULES
-                 ================================================= -->
-
-            <section
-                class="module module-design"
-                data-module="DESIGN">
-
-                <div class="module-top">
-
-                    <span class="module-index">
-                        03
-                    </span>
-
-                    <span class="module-state">
-                        READY
-                    </span>
-
-                </div>
-
-                <div class="module-title">
+                <button
+                    class="category-button"
+                    data-category="DESIGN"
+                    type="button"
+                >
                     DESIGN
-                </div>
+                    <span class="category-count" data-count="DESIGN">0</span>
+                </button>
 
-                <div class="module-line"></div>
-
-                <div class="module-status">
-                    VISUAL / UX
-                </div>
-
-            </section>
-
-
-            <section
-                class="module module-hardware"
-                data-module="HARDWARE">
-
-                <div class="module-top">
-
-                    <span class="module-index">
-                        04
-                    </span>
-
-                    <span class="module-state">
-                        LINK
-                    </span>
-
-                </div>
-
-                <div class="module-title">
+                <button
+                    class="category-button"
+                    data-category="HARDWARE"
+                    type="button"
+                >
                     HARDWARE
-                </div>
+                    <span class="category-count" data-count="HARDWARE">0</span>
+                </button>
 
-                <div class="module-line"></div>
-
-                <div class="module-status">
-                    MAKER / LAB
-                </div>
-
-            </section>
-
-
-            <section
-                class="module module-media"
-                data-module="MEDIA">
-
-                <div class="module-top">
-
-                    <span class="module-index">
-                        06
-                    </span>
-
-                    <span class="module-state">
-                        READY
-                    </span>
-
-                </div>
-
-                <div class="module-title">
+                <button
+                    class="category-button"
+                    data-category="MEDIA"
+                    type="button"
+                >
                     MEDIA
+                    <span class="category-count" data-count="MEDIA">0</span>
+                </button>
+
+                <button
+                    class="category-button"
+                    data-category="GAMES"
+                    type="button"
+                >
+                    GAMES
+                    <span class="category-count" data-count="GAMES">0</span>
+                </button>
+
+                <button
+                    class="category-button"
+                    data-category="TOOLS"
+                    type="button"
+                >
+                    TOOLS
+                    <span class="category-count" data-count="TOOLS">0</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROJECT LIST
+        ====================================================== -->
+
+        <section class="projects-section">
+
+            <div class="projects-header">
+
+                <div>
+                    <span class="section-label">L4B DATABASE</span>
+                    <h2 id="project-list-title">
+                        ALL PROJECTS
+                    </h2>
                 </div>
 
-                <div class="module-line"></div>
-
-                <div class="module-status">
-                    AUDIO / VIDEO
+                <div class="project-counter">
+                    <span id="visible-project-count">0</span>
+                    /
+                    <span id="total-project-count">0</span>
                 </div>
 
-            </section>
+            </div>
 
 
-            <!-- =================================================
-                 CRT CORE
-                 ================================================= -->
+            <div
+                id="project-grid"
+                class="project-grid"
+            ></div>
 
-            <section class="core">
+
+            <div
+                id="empty-state"
+                class="empty-state hidden"
+            >
+                NO PROJECT FOUND
+            </div>
+
+        </section>
+
+    </main>
 
 
-                <div class="core-label">
+    <!-- =========================================================
+         PROJECT MODAL
+    ========================================================== -->
 
-                    <span>
-                        L4B CORE MONITOR
+    <div
+        id="project-modal"
+        class="project-modal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-overlay" data-close-modal></div>
+
+        <div
+            class="project-modal-window"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-project-name"
+        >
+
+            <header class="modal-header">
+
+                <div class="modal-header-left">
+
+                    <span class="modal-system">
+                        L4B PROJECT DATABASE
                     </span>
 
-                    <span id="signalState">
-                        SYSTEM
+                    <span
+                        id="modal-project-id"
+                        class="modal-project-id"
+                    >
+                        PROJECT_00
                     </span>
 
                 </div>
 
+                <button
+                    id="modal-close"
+                    class="modal-close"
+                    type="button"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
 
-                <div class="crt-shell">
+            </header>
 
 
-                    <div class="crt-frame">
+            <div class="modal-content">
 
+                <!-- PREVIEW -->
+
+                <div class="modal-preview">
+
+                    <div class="preview-header">
+
+                        <span>LIVE PREVIEW</span>
+
+                        <span
+                            id="modal-preview-status"
+                            class="preview-status"
+                        >
+                            READY
+                        </span>
+
+                    </div>
+
+                    <div class="preview-frame-wrapper">
+
+                        <iframe
+                            id="modal-preview-frame"
+                            title="Project preview"
+                            loading="lazy"
+                            sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                        ></iframe>
 
                         <div
-                            class="crt-screen"
-                            id="crtScreen">
-
-
-                            <div
-                                class="crt-content"
-                                id="crtContent">
-
-
-                                <div class="server-header">
-
-                                    <span id="terminalTitle">
-                                        L4B // SERVER MONITOR
-                                    </span>
-
-                                    <span id="terminalTime">
-                                        00:00:00
-                                    </span>
-
-                                </div>
-
-
-                                <div class="terminal-main">
-
-
-                                    <div class="terminal-column">
-
-
-                                        <div class="terminal-section">
-
-                                            <div class="terminal-section-title">
-                                                SERVER
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>STATUS</span>
-                                                <strong id="serverStatus">
-                                                    ONLINE
-                                                </strong>
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>HOST</span>
-                                                <strong>
-                                                    3X0C3T-VPS
-                                                </strong>
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>OS</span>
-                                                <strong>
-                                                    UBUNTU 24.04
-                                                </strong>
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>HTTP</span>
-                                                <strong>
-                                                    APACHE
-                                                </strong>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="terminal-section">
-
-                                            <div class="terminal-section-title">
-                                                NETWORK
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>LINK</span>
-                                                <strong>
-                                                    ONLINE
-                                                </strong>
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>LATENCY</span>
-                                                <strong id="latency">
-                                                    018 MS
-                                                </strong>
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>TRAFFIC</span>
-                                                <strong id="traffic">
-                                                    042 KB/S
-                                                </strong>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="terminal-column">
-
-
-                                        <div class="terminal-section">
-
-                                            <div class="terminal-section-title">
-                                                L4B CORE
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>STATUS</span>
-                                                <strong id="l4bStatus">
-                                                    NOMINAL
-                                                </strong>
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>PROJECTS</span>
-                                                <strong id="projectCount">
-                                                    89
-                                                </strong>
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>MODULES</span>
-                                                <strong>
-                                                    06
-                                                </strong>
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>VERSION</span>
-                                                <strong>
-                                                    v1.0
-                                                </strong>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="terminal-section">
-
-                                            <div class="terminal-section-title">
-                                                RESOURCES
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>CPU</span>
-                                                <strong id="cpuValue">
-                                                    18%
-                                                </strong>
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>MEM</span>
-                                                <strong id="memValue">
-                                                    042%
-                                                </strong>
-                                            </div>
-
-                                            <div class="terminal-row">
-                                                <span>UPTIME</span>
-                                                <strong id="uptime">
-                                                    127:43:21
-                                                </strong>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                                <div class="terminal-footer">
-
-                                    <span id="terminalMessage">
-                                        MONITORING ACTIVE
-                                    </span>
-
-                                    <span>
-                                        L4B://CORE
-                                    </span>
-
-                                </div>
-
-
+                            id="modal-no-preview"
+                            class="modal-no-preview"
+                        >
+                            <div class="no-preview-icon">
+                                //
                             </div>
 
+                            <strong>NO LIVE PREVIEW</strong>
 
-                            <div
-                                class="crt-image"
-                                id="crtImage">
-                            </div>
+                            <span>
+                                This project does not contain a public index.html entry point.
+                            </span>
+                        </div>
 
+                    </div>
 
-                            <div class="crt-noise"></div>
-
-                            <div class="crt-scanlines"></div>
-
-                            <div class="crt-vignette"></div>
-
-                            <div class="crt-glare"></div>
+                </div>
 
 
-                            <div class="crt-overlay">
+                <!-- INFORMATION -->
 
-                                <div class="crt-corner crt-corner-tl"></div>
-                                <div class="crt-corner crt-corner-tr"></div>
-                                <div class="crt-corner crt-corner-bl"></div>
-                                <div class="crt-corner crt-corner-br"></div>
+                <aside class="modal-info">
 
+                    <div class="modal-category">
+                        <span id="modal-project-category">
+                            WEB
+                        </span>
+                    </div>
 
-                                <div class="crt-frame-info">
+                    <h2 id="modal-project-name">
+                        PROJECT
+                    </h2>
 
-                                    <span id="frameNumber">
-                                        FRAME 000
-                                    </span>
+                    <div class="modal-meta">
 
-                                    <span id="frameMessage">
-                                        SYSTEM
-                                    </span>
+                        <div class="meta-item">
+                            <span class="meta-label">PROJECT ID</span>
+                            <strong id="modal-project-number">00</strong>
+                        </div>
 
-                                </div>
+                        <div class="meta-item">
+                            <span class="meta-label">DATE</span>
+                            <strong id="modal-project-date">2026</strong>
+                        </div>
 
-                            </div>
-
-
+                        <div class="meta-item">
+                            <span class="meta-label">STATUS</span>
+                            <strong id="modal-project-status">ONLINE</strong>
                         </div>
 
                     </div>
 
 
-                    <div class="crt-controls">
+                    <div class="modal-summary">
 
-                        <span class="crt-led"></span>
-
-                        <span>
-                            CRT-03
+                        <span class="meta-label">
+                            SUMMARY
                         </span>
 
-                        <span class="control-separator">
-                            /
-                        </span>
-
-                        <span id="frequency">
-                            08.42 Hz
-                        </span>
-
-                        <span class="control-separator">
-                            /
-                        </span>
-
-                        <span id="signalMode">
-                            MONITOR
-                        </span>
+                        <p id="modal-project-summary">
+                            Project summary.
+                        </p>
 
                     </div>
 
 
-                </div>
+                    <div class="modal-path">
+
+                        <span class="meta-label">
+                            PATH
+                        </span>
+
+                        <code id="modal-project-path">
+                            /L4B/project/
+                        </code>
+
+                    </div>
 
 
-                <div class="core-label core-bottom">
+                    <div class="modal-actions">
 
-                    <span>
-                        SUBLIMINAL CHANNEL
+                        <a
+                            id="modal-open-project"
+                            class="modal-action primary"
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            OPEN PROJECT
+                        </a>
+
+                        <a
+                            id="modal-github"
+                            class="modal-action secondary"
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GITHUB
+                        </a>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         INDEX MODAL
+    ========================================================== -->
+
+    <div
+        id="index-modal"
+        class="index-modal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-overlay" data-close-index></div>
+
+        <div class="index-window">
+
+            <header class="index-header">
+
+                <div>
+                    <span class="modal-system">
+                        L4B DATABASE INDEX
                     </span>
 
-                    <span id="coreReadout">
-                        STANDBY
-                    </span>
-
+                    <h2>
+                        PROJECT DIRECTORY
+                    </h2>
                 </div>
 
+                <button
+                    id="index-close"
+                    class="modal-close"
+                    type="button"
+                >
+                    ×
+                </button>
 
-            </section>
+            </header>
 
-
-        </div>
-
-
-        <div class="crosshair crosshair-tl"></div>
-        <div class="crosshair crosshair-tr"></div>
-        <div class="crosshair crosshair-bl"></div>
-        <div class="crosshair crosshair-br"></div>
-
-
-        <div class="edge-readout edge-readout-left">
-
-            <span>
-                SYS
-            </span>
-
-            <strong id="edgeCpu">
-                18%
-            </strong>
+            <div
+                id="index-list"
+                class="index-list"
+            ></div>
 
         </div>
 
-
-        <div class="edge-readout edge-readout-right">
-
-            <span>
-                MEM
-            </span>
-
-            <strong id="edgeMem">
-                042%
-            </strong>
-
-        </div>
+    </div>
 
 
-    </main>
-
-
-    <!-- =====================================================
+    <!-- =========================================================
          FOOTER
-         ===================================================== -->
+    ========================================================== -->
 
-    <footer class="footer">
+    <footer class="site-footer">
 
-        <div class="footer-inner">
+        <div>
+            -3xØc3t- L4B
+        </div>
 
-            <div class="footer-block footer-left">
+        <div>
+            DIGITAL EXPERIMENTATION &amp; RESEARCH
+        </div>
 
-                <span class="footer-label">
-                    L4B
-                </span>
-
-                <span>
-                    DIGITAL LABORATORY
-                </span>
-
-            </div>
-
-
-            <div class="footer-block footer-center">
-
-                <span class="footer-status-dot"></span>
-
-                <span>
-                    SYSTEM / STABLE
-                </span>
-
-                <span id="screenInfo">
-                    SCREEN 0000×0000
-                </span>
-
-            </div>
-
-
-            <div class="footer-block footer-right">
-
-                <span>
-                    3X0C3T
-                </span>
-
-                <span>
-                    © <span id="year"></span>
-                </span>
-
-            </div>
-
+        <div id="footer-year">
+            2026
         </div>
 
     </footer>
-
-
-</div>
-
-
-<!-- =========================================================
-     PROJECT BROWSER
-     ========================================================= -->
-
-<div
-    id="projectBrowser"
-    class="project-browser"
-    aria-hidden="true">
-
-
-    <div class="project-browser-panel">
-
-
-        <div class="project-browser-header">
-
-            <div>
-
-                <span class="project-browser-kicker">
-                    L4B // PROJECT INDEX
-                </span>
-
-                <h2 id="projectBrowserTitle">
-                    WEB
-                </h2>
-
-            </div>
-
-
-            <button
-                id="projectBrowserClose"
-                type="button"
-                aria-label="Fermer">
-
-                ×
-
-            </button>
-
-        </div>
-
-
-        <div
-            id="projectBrowserList"
-            class="project-browser-list">
-        </div>
-
-
-    </div>
 
 </div>
 
@@ -709,5 +494,4 @@
 <script src="index.js"></script>
 
 </body>
-
 </html>
